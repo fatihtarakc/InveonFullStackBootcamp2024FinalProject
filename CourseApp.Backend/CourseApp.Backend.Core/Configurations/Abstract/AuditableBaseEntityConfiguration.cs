@@ -6,9 +6,12 @@
         {
             base.Configure(builder);
 
-            builder.Property(auditableEntity => auditableEntity.CreatedBy).HasMaxLength(50);
-            builder.Property(auditableEntity => auditableEntity.DeletedBy).HasMaxLength(50);
-            builder.Property(auditableEntity => auditableEntity.ModifiedBy).HasMaxLength(50);
+            builder.Property(auditableBaseEntity => auditableBaseEntity.CreatedBy).HasMaxLength(36);
+            builder.ToTable(auditableBaseEntity => auditableBaseEntity.HasCheckConstraint($"{typeof(T).Name}_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1"));
+
+            builder.Property(auditableBaseEntity => auditableBaseEntity.DeletedBy).HasMaxLength(36);
+
+            builder.Property(auditableBaseEntity => auditableBaseEntity.ModifiedBy).HasMaxLength(36);
         }
     }
 }
