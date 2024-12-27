@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseApp.Backend.Entities"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseApp.Backend.Entities.Configurations", "CourseApp.Backend.Entities.Configurations\CourseApp.Backend.Entities.Configurations.csproj", "{C6DB0212-B9EA-4EEB-83B4-DED2414F8224}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseApp.Backend.DataAccess", "CourseApp.Backend.DataAccess\CourseApp.Backend.DataAccess.csproj", "{12A53A39-8D8D-4D51-8358-E30B42D49EC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C6DB0212-B9EA-4EEB-83B4-DED2414F8224}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DB0212-B9EA-4EEB-83B4-DED2414F8224}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DB0212-B9EA-4EEB-83B4-DED2414F8224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A53A39-8D8D-4D51-8358-E30B42D49EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12A53A39-8D8D-4D51-8358-E30B42D49EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A53A39-8D8D-4D51-8358-E30B42D49EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A53A39-8D8D-4D51-8358-E30B42D49EC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
