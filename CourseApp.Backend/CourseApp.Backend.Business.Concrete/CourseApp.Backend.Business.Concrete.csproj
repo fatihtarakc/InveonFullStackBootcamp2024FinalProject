@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseApp.Backend.Business.Abstract\CourseApp.Backend.Business.Abstract.csproj" />
+    <ProjectReference Include="..\CourseApp.Backend.DataAccess.Concrete\CourseApp.Backend.DataAccess.Concrete.csproj" />
+  </ItemGroup>
+
+</Project>
