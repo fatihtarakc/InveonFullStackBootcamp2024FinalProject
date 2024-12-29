@@ -7,7 +7,7 @@
             base.Configure(builder);
 
             builder.Property(student => student.Birthdate).HasColumnType("date");
-            builder.ToTable(student => student.HasCheckConstraint("Student_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 18)"));
+            builder.ToTable(student => student.HasCheckConstraint("Student_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 7)"));
         }
     }
 }

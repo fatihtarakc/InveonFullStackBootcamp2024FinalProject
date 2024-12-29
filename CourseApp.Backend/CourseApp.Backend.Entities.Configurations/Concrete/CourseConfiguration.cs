@@ -6,7 +6,10 @@
         {
             base.Configure(builder);
 
-            builder.Property(course => course.Name).HasMaxLength(50);
+            builder.Property(course => course.PhotoUri).HasMaxLength(250);
+            builder.ToTable(course => course.HasCheckConstraint("Course_PhotoUri_MinLength_Control", "Len(PhotoUri) >= 5"));
+
+            builder.Property(course => course.Name).HasMaxLength(100);
             builder.ToTable(course => course.HasCheckConstraint("Course_Name_MinLength_Control", "Len(Name) >= 2"));
 
             builder.Property(course => course.Description).HasMaxLength(250);

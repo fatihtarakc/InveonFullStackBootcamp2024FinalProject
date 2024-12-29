@@ -7,17 +7,25 @@
             services.Configure<ConnectionOptions>
                 (configuration.GetSection(ConnectionOptions.Connections));
 
-            var serviceProvider = services.BuildServiceProvider();
-            var connectionOptions = serviceProvider.GetRequiredService<IOptions<ConnectionOptions>>().Value;
-
+            var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
             services.AddDbContext<CourseAppDbContext>(dbContextOptionsBuilder =>
             {
                 dbContextOptionsBuilder.UseLazyLoadingProxies();
-                dbContextOptionsBuilder.UseSqlServer(connectionOptions.MssqlServer,
+                dbContextOptionsBuilder.UseSqlServer(connectionOptions!.MssqlServer,
                     sqlServerDbContextOptionsBuilder => sqlServerDbContextOptionsBuilder.EnableRetryOnFailure(10, TimeSpan.FromSeconds(10), null));
             });
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<CourseAppDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>().AddDefaultTokenProviders();
+            services.AddIdentity<IdentityUser, IdentityRole>(identityOptions =>
+            {
+                identityOptions.SignIn.RequireConfirmedEmail = true;
+
+                identityOptions.Password.RequireNonAlphanumeric = true;
+                identityOptions.Password.RequireUppercase = true;
+                identityOptions.Password.RequireLowercase = true;
+                identityOptions.Password.RequireDigit = true;
+                identityOptions.Password.RequiredUniqueChars = 4;
+                identityOptions.Password.RequiredLength = 8;
+            }).AddEntityFrameworkStores<CourseAppDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>().AddDefaultTokenProviders();
 
             return services;
         }

@@ -10,7 +10,7 @@
         public ShoppingStatus ShoppingStatus { get; set; }
 
         // Relations
-        public Guid StudentId { get; set; }
+        public Guid StudentId { get; init; }
         public virtual ICollection<CourseOrder> CourseOrders { get; set; }
     }
 }

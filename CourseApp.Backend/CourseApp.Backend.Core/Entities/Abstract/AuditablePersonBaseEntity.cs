@@ -6,7 +6,7 @@
         public string Surname { get; set; }
         public string Email { get; set; }
         public string? VerificationCode { get; set; }
-        public string IdentityId { get; init; }
+        public Guid IdentityId { get; init; }
         public AccountStatus AccountStatus { get; set; }
     }
 }

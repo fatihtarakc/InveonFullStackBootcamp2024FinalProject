@@ -10,6 +10,8 @@
 
             builder.Property(payment => payment.TotalCoursePrice).HasColumnType("decimal(10,2)");
             builder.ToTable(payment => payment.HasCheckConstraint("Payment_TotalCoursePrice_Min_Control", "TotalCoursePrice >= 0"));
+
+            builder.HasIndex(payment => payment.OrderId).IsUnique();
         }
     }
 }

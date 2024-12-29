@@ -27,7 +27,7 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     Surname = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     VerificationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdentityId = table.Column<string>(type: "varchar", nullable: false),
+                    IdentityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AccountStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -35,7 +35,6 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     table.PrimaryKey("PK_Admins", x => x.Id);
                     table.CheckConstraint("Admin_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
                     table.CheckConstraint("Admin_Email_MinLength_Control", "Len(Email) >= 5");
-                    table.CheckConstraint("Admin_IdentityId_Length_Control", "Len(IdentityId) = 36");
                     table.CheckConstraint("Admin_Name_MinLength_Control", "Len(Name) >= 2");
                     table.CheckConstraint("Admin_Surname_MinLength_Control", "Len(Surname) >= 2");
                 });
@@ -113,10 +112,11 @@ namespace CourseApp.Backend.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PhotoUri = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    PhotoUri = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    Currency = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TrainerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntityStatus = table.Column<int>(type: "int", nullable: false),
@@ -133,6 +133,7 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     table.CheckConstraint("Course_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
                     table.CheckConstraint("Course_Description_MinLength_Control", "Len(Description) >= 5");
                     table.CheckConstraint("Course_Name_MinLength_Control", "Len(Name) >= 2");
+                    table.CheckConstraint("Course_PhotoUri_MinLength_Control", "Len(PhotoUri) >= 5");
                     table.CheckConstraint("Course_Price_Min_Control", "Price >= 0");
                 });
 
@@ -164,6 +165,7 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TotalCourseAmount = table.Column<int>(type: "int", nullable: false),
                     TotalCoursePrice = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    Currency = table.Column<int>(type: "int", nullable: false),
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntityStatus = table.Column<int>(type: "int", nullable: false),
@@ -199,16 +201,15 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     Surname = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     VerificationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdentityId = table.Column<string>(type: "varchar", nullable: false),
+                    IdentityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AccountStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Students", x => x.Id);
-                    table.CheckConstraint("Student_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 18)");
+                    table.CheckConstraint("Student_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 7)");
                     table.CheckConstraint("Student_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
                     table.CheckConstraint("Student_Email_MinLength_Control", "Len(Email) >= 5");
-                    table.CheckConstraint("Student_IdentityId_Length_Control", "Len(IdentityId) = 36");
                     table.CheckConstraint("Student_Name_MinLength_Control", "Len(Name) >= 2");
                     table.CheckConstraint("Student_Surname_MinLength_Control", "Len(Surname) >= 2");
                 });
@@ -230,7 +231,7 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     Surname = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     VerificationCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdentityId = table.Column<string>(type: "varchar", nullable: false),
+                    IdentityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AccountStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -239,7 +240,6 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     table.CheckConstraint("Trainer_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 18)");
                     table.CheckConstraint("Trainer_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
                     table.CheckConstraint("Trainer_Email_MinLength_Control", "Len(Email) >= 5");
-                    table.CheckConstraint("Trainer_IdentityId_Length_Control", "Len(IdentityId) = 36");
                     table.CheckConstraint("Trainer_Name_MinLength_Control", "Len(Name) >= 2");
                     table.CheckConstraint("Trainer_Surname_MinLength_Control", "Len(Surname) >= 2");
                 });
@@ -499,6 +499,12 @@ namespace CourseApp.Backend.DataAccess.Migrations
                 name: "IX_CourseOrders_OrderId",
                 table: "CourseOrders",
                 column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Payments_OrderId",
+                table: "Payments",
+                column: "OrderId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_StudentCourses_CourseId",

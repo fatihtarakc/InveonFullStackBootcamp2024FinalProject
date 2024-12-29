@@ -18,9 +18,6 @@ namespace CourseApp.Backend.DataAccess.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.0")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -57,9 +54,8 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     b.Property<int>("EntityStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdentityId")
-                        .IsRequired()
-                        .HasColumnType("varchar");
+                    b.Property<Guid>("IdentityId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(36)
@@ -94,8 +90,6 @@ namespace CourseApp.Backend.DataAccess.Migrations
                             t.HasCheckConstraint("Admin_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
 
                             t.HasCheckConstraint("Admin_Email_MinLength_Control", "Len(Email) >= 5");
-
-                            t.HasCheckConstraint("Admin_IdentityId_Length_Control", "Len(IdentityId) = 36");
 
                             t.HasCheckConstraint("Admin_Name_MinLength_Control", "Len(Name) >= 2");
 
@@ -169,6 +163,9 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Currency")
+                        .HasColumnType("int");
+
                     b.Property<string>("DeletedBy")
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
@@ -193,12 +190,13 @@ namespace CourseApp.Backend.DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PhotoUri")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)");
@@ -215,6 +213,8 @@ namespace CourseApp.Backend.DataAccess.Migrations
                             t.HasCheckConstraint("Course_Description_MinLength_Control", "Len(Description) >= 5");
 
                             t.HasCheckConstraint("Course_Name_MinLength_Control", "Len(Name) >= 2");
+
+                            t.HasCheckConstraint("Course_PhotoUri_MinLength_Control", "Len(PhotoUri) >= 5");
 
                             t.HasCheckConstraint("Course_Price_Min_Control", "Price >= 0");
                         });
@@ -328,6 +328,9 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Currency")
+                        .HasColumnType("int");
+
                     b.Property<string>("DeletedBy")
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
@@ -358,6 +361,9 @@ namespace CourseApp.Backend.DataAccess.Migrations
                         .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
 
                     b.ToTable("Payments", t =>
                         {
@@ -404,9 +410,8 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     b.Property<int>("EntityStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdentityId")
-                        .IsRequired()
-                        .HasColumnType("varchar");
+                    b.Property<Guid>("IdentityId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(36)
@@ -438,13 +443,11 @@ namespace CourseApp.Backend.DataAccess.Migrations
 
                     b.ToTable("Students", t =>
                         {
-                            t.HasCheckConstraint("Student_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 18)");
+                            t.HasCheckConstraint("Student_Birthdate_MinAge_Control", "Year(BirthDate) <= (Year(GetDate()) - 7)");
 
                             t.HasCheckConstraint("Student_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
 
                             t.HasCheckConstraint("Student_Email_MinLength_Control", "Len(Email) >= 5");
-
-                            t.HasCheckConstraint("Student_IdentityId_Length_Control", "Len(IdentityId) = 36");
 
                             t.HasCheckConstraint("Student_Name_MinLength_Control", "Len(Name) >= 2");
 
@@ -536,9 +539,8 @@ namespace CourseApp.Backend.DataAccess.Migrations
                     b.Property<int>("EntityStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdentityId")
-                        .IsRequired()
-                        .HasColumnType("varchar");
+                    b.Property<Guid>("IdentityId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(36)
@@ -575,8 +577,6 @@ namespace CourseApp.Backend.DataAccess.Migrations
                             t.HasCheckConstraint("Trainer_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
 
                             t.HasCheckConstraint("Trainer_Email_MinLength_Control", "Len(Email) >= 5");
-
-                            t.HasCheckConstraint("Trainer_IdentityId_Length_Control", "Len(IdentityId) = 36");
 
                             t.HasCheckConstraint("Trainer_Name_MinLength_Control", "Len(Name) >= 2");
 

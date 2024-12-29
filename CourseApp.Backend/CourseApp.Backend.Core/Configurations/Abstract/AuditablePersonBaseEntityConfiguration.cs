@@ -17,8 +17,6 @@
             builder.ToTable(auditablePersonBaseEntity => auditablePersonBaseEntity.HasCheckConstraint($"{typeof(T).Name}_Email_MinLength_Control", "Len(Email) >= 5"));
 
             builder.HasIndex(auditablePersonBaseEntity => auditablePersonBaseEntity.IdentityId).IsUnique();
-            builder.Property(auditablePersonBaseEntity => auditablePersonBaseEntity.IdentityId).HasColumnType("varchar");
-            builder.ToTable(auditablePersonBaseEntity => auditablePersonBaseEntity.HasCheckConstraint($"{typeof(T).Name}_IdentityId_Length_Control", "Len(IdentityId) = 36"));
         }
     }
 }
