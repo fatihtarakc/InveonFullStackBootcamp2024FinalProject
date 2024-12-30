@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.9.0" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InveonCourseApp.Backend.Business.Abstract\InveonCourseApp.Backend.Business.Abstract.csproj" />
+    <ProjectReference Include="..\InveonCourseApp.Backend.Cache\InveonCourseApp.Backend.Cache.csproj" />
+    <ProjectReference Include="..\InveonCourseApp.Backend.DataAccess.Concrete\InveonCourseApp.Backend.DataAccess.Concrete.csproj" />
+  </ItemGroup>
+
+</Project>

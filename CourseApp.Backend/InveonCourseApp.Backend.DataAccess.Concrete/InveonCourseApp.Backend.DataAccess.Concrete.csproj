@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InveonCourseApp.Backend.DataAccess.Abstract\InveonCourseApp.Backend.DataAccess.Abstract.csproj" />
+    <ProjectReference Include="..\InveonCourseApp.Backend.DataAccess\InveonCourseApp.Backend.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

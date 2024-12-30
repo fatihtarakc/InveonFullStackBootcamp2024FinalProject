@@ -1,7 +1,0 @@
-﻿namespace CourseApp.Backend.Core.Repositories.Abstract.Interfaces
-{
-    public interface IAsyncUpdatableRepository<Entity> where Entity : AuditableBaseEntity
-    {
-        ValueTask<Entity> UpdateAsync(Entity entity);
-    }
-}
