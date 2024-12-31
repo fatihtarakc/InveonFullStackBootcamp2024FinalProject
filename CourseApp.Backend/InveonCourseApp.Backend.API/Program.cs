@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
+
 builder.AddApiLoggingWebApplicationBuilder();
 
 // Add services to the container.
@@ -18,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 app.AddBackgroundJobsUseHangfireDashboardWithPathApplicationBuilder("/hangfire");
+app.AddApiUseRequestLocalizationApplicationBuilder();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

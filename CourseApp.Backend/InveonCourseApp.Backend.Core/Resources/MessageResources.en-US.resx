@@ -120,10 +120,10 @@
   <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
     <value>This email address can not be used !</value>
   </data>
-  <data name="Account_Login_Failed" xml:space="preserve">
-    <value>Login failed. User info o password is incorrect !</value>
+  <data name="Account_SignIn_Failed" xml:space="preserve">
+    <value>Login failed. This email address or password is incorrect !</value>
   </data>
-  <data name="Account_Login_Successful" xml:space="preserve">
+  <data name="Account_SignIn_Successful" xml:space="preserve">
     <value>Login successful !</value>
   </data>
   <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">

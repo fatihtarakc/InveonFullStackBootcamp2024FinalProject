@@ -120,10 +120,10 @@
   <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
     <value>Bu email adresi kullanılamaz !</value>
   </data>
-  <data name="Account_Login_Failed" xml:space="preserve">
-    <value>Giriş başarısız. Kullanıcı bilgisi veya şifre hatalı !</value>
+  <data name="Account_SignIn_Failed" xml:space="preserve">
+    <value>Giriş başarısız. Email adresi veya şifre hatalı !</value>
   </data>
-  <data name="Account_Login_Successful" xml:space="preserve">
+  <data name="Account_SignIn_Successful" xml:space="preserve">
     <value>Giriş başarılı !</value>
   </data>
   <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">

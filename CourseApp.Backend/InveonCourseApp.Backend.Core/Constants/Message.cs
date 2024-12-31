@@ -5,8 +5,8 @@
         #region Account
         public const string Account_Was_Not_Found = "Account_Was_Not_Found";
 
-        public const string Account_Login_Failed = "Account_Login_Failed";
-        public const string Account_Login_Successful = "Account_Login_Successful";
+        public const string Account_SignIn_Failed = "Account_SignIn_Failed";
+        public const string Account_SignIn_Successful = "Account_SignIn_Successful";
 
         public const string Account_Email_Has_Already_Been_Exist = "Account_Email_Has_Already_Been_Exist";
         public const string Account_Username_Has_Already_Been_Exist = "Account_Username_Has_Already_Been_Exist";

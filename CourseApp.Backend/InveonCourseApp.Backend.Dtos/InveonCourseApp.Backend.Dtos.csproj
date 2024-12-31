@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="IdentityUserDtos\" />
     <Folder Include="AdminDtos\" />
     <Folder Include="CategoryDtos\" />
     <Folder Include="CourseDtos\" />
