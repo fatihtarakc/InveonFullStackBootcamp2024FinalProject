@@ -1,6 +1,8 @@
 ﻿global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Localization;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.Extensions.Localization;
+global using System.Globalization;
 
 global using InveonCourseApp.Backend.API.Extensions;
 global using InveonCourseApp.Backend.BackgroundJobs.Extensions;

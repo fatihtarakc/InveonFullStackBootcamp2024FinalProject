@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Localization;
-using System.Globalization;
-
-namespace InveonCourseApp.Backend.API.Extensions
+﻿namespace InveonCourseApp.Backend.API.Extensions
 {
     public static class ServiceRegistiration
     {
