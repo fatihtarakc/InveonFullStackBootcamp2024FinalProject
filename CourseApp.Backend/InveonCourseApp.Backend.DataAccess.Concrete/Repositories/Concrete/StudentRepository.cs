@@ -4,6 +4,9 @@
     {
         public StudentRepository(InveonCourseAppDbContext db) : base(db) { }
 
+        public async Task<Student> GetByIdentityIdAsync(Guid identityId) =>
+            await dbEntity.FirstOrDefaultAsync(student => student.IdentityId == identityId);
+
         public async Task<Student> IncludeGetFirstOrDefaultAsync(Expression<Func<Student, bool>> expression, Expression<Func<Student, object>> include, bool tracking = true) =>
             await GetAllByStatusIsNotDeletedByTracking(tracking).Include(include).FirstOrDefaultAsync(expression);
 

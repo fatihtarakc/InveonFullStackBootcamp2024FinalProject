@@ -4,6 +4,8 @@
         IAsyncAddableRepository<Student>, IAsyncDeletableRepository<Student>, IAsyncUpdatableRepository<Student>,
         IAsyncQueryableRepository<Student>, IAsyncOrderableRepository<Student>
     {
+        Task<Student> GetByIdentityIdAsync(Guid identityId);
+
         Task<Student> IncludeGetFirstOrDefaultAsync(Expression<Func<Student, bool>> expression, Expression<Func<Student, object>> include, bool tracking = true);
         Task<Student> IncludeGetFirstOrDefaultAsync(Expression<Func<Student, bool>> expression, Expression<Func<Student, object>> include, Expression<Func<object, object>> thenInclude, bool tracking = true);
 

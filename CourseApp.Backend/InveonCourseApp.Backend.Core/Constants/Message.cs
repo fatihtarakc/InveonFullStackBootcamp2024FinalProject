@@ -3,17 +3,57 @@
     public class Message
     {
         #region Account
-        public const string Account_Was_Not_Found = "Account_Was_Not_Found";
-
         public const string Account_SignIn_Failed = "Account_SignIn_Failed";
         public const string Account_SignIn_Successful = "Account_SignIn_Successful";
 
-        public const string Account_Email_Has_Already_Been_Exist = "Account_Email_Has_Already_Been_Exist";
-        public const string Account_Username_Has_Already_Been_Exist = "Account_Username_Has_Already_Been_Exist";
+        public const string Account_Was_Not_Found = "Account_Was_Not_Found";
+        public const string Account_Was_Found = "Account_Was_Found";
+
+        public const string Account_Has_Not_Activated = "Account_Has_Not_Activated";
+        public const string Account_Was_Activated= "Account_Was_Activated";
+
+        public const string Account_Email_Has_Not_Confirmed = "Account_Email_Has_Not_Confirmed";
+        public const string Account_Email_Was_Confirmed = "Account_Email_Was_Confirmed";
+
+        public const string Account_Email_Has_Already_Existed = "Account_Email_Has_Already_Existed";
+        public const string Account_Username_Has_Already_Existed = "Account_Username_Has_Already_Existed";
 
         public const string Account_Please_Enter_Your_Email = "Account_Please_Enter_Your_Email";
         public const string Account_Please_Enter_Your_Password = "Account_Please_Enter_Your_Password";
         public const string Account_Please_Enter_Your_Email_With_Correct_Format = "Account_Please_Enter_Your_Email_With_Correct_Format";
+        #endregion
+
+        #region Admin
+        public const string Admin_Was_Not_Found_ById = "Admin_Was_Not_Found_ById";
+        public const string Admin_Was_Found_ById = "Admin_Was_Found_ById";
+
+        public const string Admin_Was_Not_Found_ByEmail = "Admin_Was_Not_Found_ByEmail";
+        public const string Admin_Was_Found_ByEmail = "Admin_Was_Found_ByEmail";
+
+        public const string Admin_Was_Not_Found_ByIdentityId = "Admin_Was_Not_Found_ByIdentityId";
+        public const string Admin_Was_Found_ByIdentityId = "Admin_Was_Found_ByIdentityId";
+        #endregion
+
+        #region Student
+        public const string Student_Was_Not_Found_ById = "Student_Was_Not_Found_ById";
+        public const string Student_Was_Found_ById = "Student_Was_Found_ById";
+
+        public const string Student_Was_Not_Found_ByEmail = "Student_Was_Not_Found_ByEmail";
+        public const string Student_Was_Found_ByEmail = "Student_Was_Found_ByEmail";
+
+        public const string Student_Was_Not_Found_ByIdentityId = "Student_Was_Not_Found_ByIdentityId";
+        public const string Student_Was_Found_ByIdentityId = "Student_Was_Found_ByIdentityId";
+        #endregion
+
+        #region Trainer
+        public const string Trainer_Was_Not_Found_ById = "Trainer_Was_Not_Found_ById";
+        public const string Trainer_Was_Found_ById = "Trainer_Was_Found_ById";
+
+        public const string Trainer_Was_Not_Found_ByEmail = "Trainer_Was_Not_Found_ByEmail";
+        public const string Trainer_Was_Found_ByEmail = "Trainer_Was_Found_ByEmail";
+
+        public const string Trainer_Was_Not_Found_ByIdentityId = "Trainer_Was_Not_Found_ByIdentityId";
+        public const string Trainer_Was_Found_ByIdentityId = "Trainer_Was_Found_ByIdentityId";
         #endregion
 
         #region Email

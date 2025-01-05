@@ -14,13 +14,16 @@
 
             services.AddIdentity<IdentityUser, IdentityRole>(identityOptions =>
             {
-                identityOptions.SignIn.RequireConfirmedEmail = true;
                 identityOptions.Password.RequiredLength = 8;
                 identityOptions.Password.RequiredUniqueChars = 4;
                 identityOptions.Password.RequireUppercase = true;
                 identityOptions.Password.RequireLowercase = true;
                 identityOptions.Password.RequireDigit = true;
                 identityOptions.Password.RequireNonAlphanumeric = true;
+
+                identityOptions.SignIn.RequireConfirmedEmail = true;
+
+                identityOptions.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
             }).AddRoles<IdentityRole>().AddEntityFrameworkStores<InveonCourseAppDbContext>().AddErrorDescriber<CustomIdentityErrorDescriber>().AddDefaultTokenProviders();
             return services;
         }

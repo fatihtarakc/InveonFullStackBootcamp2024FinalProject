@@ -2,5 +2,8 @@
 {
     public interface ITrainerRepository :
         IAsyncAddableRepository<Trainer>, IAsyncDeletableRepository<Trainer>, IAsyncUpdatableRepository<Trainer>,
-        IAsyncQueryableRepository<Trainer>, IAsyncOrderableRepository<Trainer> { }
+        IAsyncQueryableRepository<Trainer>, IAsyncOrderableRepository<Trainer>
+    {
+        Task<Trainer> GetByIdentityIdAsync(Guid identityId);
+    }
 }

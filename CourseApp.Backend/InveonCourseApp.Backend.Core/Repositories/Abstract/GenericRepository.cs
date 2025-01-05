@@ -4,7 +4,7 @@
         IAsyncAddableRepository<Entity>, IAsyncDeletableRepository<Entity>, IAsyncUpdatableRepository<Entity>,
         IAsyncQueryableRepository<Entity>, IAsyncOrderableRepository<Entity> where Entity : AuditableBaseEntity
     {
-        private readonly DbSet<Entity> dbEntity;
+        protected readonly DbSet<Entity> dbEntity;
         private readonly IdentityDbContext<IdentityUser, IdentityRole, string> db;
         protected GenericRepository(IdentityDbContext<IdentityUser, IdentityRole, string> db)
         {

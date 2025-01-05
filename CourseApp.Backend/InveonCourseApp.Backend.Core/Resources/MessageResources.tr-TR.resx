@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
+  <data name="Account_Email_Has_Already_Existed" xml:space="preserve">
     <value>Bu email adresi kullanılamaz !</value>
+  </data>
+  <data name="Account_Email_Has_Not_Confirmed" xml:space="preserve">
+    <value>Bu email adresi henüz onaylanmamış !</value>
+  </data>
+  <data name="Account_Email_Was_Confirmed" xml:space="preserve">
+    <value>Email adresi doğrulandı !</value>
+  </data>
+  <data name="Account_Has_Not_Activated" xml:space="preserve">
+    <value>Bu hesap henüz doğrulanmamış !</value>
   </data>
   <data name="Account_SignIn_Failed" xml:space="preserve">
     <value>Giriş başarısız. Email adresi veya şifre hatalı !</value>
@@ -126,47 +135,35 @@
   <data name="Account_SignIn_Successful" xml:space="preserve">
     <value>Giriş başarılı !</value>
   </data>
-  <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">
+  <data name="Account_Username_Has_Already_Existed" xml:space="preserve">
     <value>Bu username kullanılamaz !</value>
+  </data>
+  <data name="Account_Was_Activated" xml:space="preserve">
+    <value>Hesap etkinleştirildi !</value>
+  </data>
+  <data name="Account_Was_Found" xml:space="preserve">
+    <value>Hesap bulundu !</value>
   </data>
   <data name="Account_Was_Not_Found" xml:space="preserve">
     <value>Hesap bulunamadı !</value>
   </data>
-  <data name="AppUser_CouldNotBe_Added" xml:space="preserve">
-    <value>Library'ye user ekleme işlemi başarız !</value>
+  <data name="Admin_Was_Found_ByEmail" xml:space="preserve">
+    <value>Email'e göre admin bulundu !</value>
   </data>
-  <data name="AppUser_HasBeen_Added" xml:space="preserve">
-    <value>User, sisteme başarılı bir şekilde eklendi !</value>
+  <data name="Admin_Was_Found_ById" xml:space="preserve">
+    <value>Id'ye göre admin bulundu !</value>
   </data>
-  <data name="Book_CouldNotBe_Added" xml:space="preserve">
-    <value>Kitap kütüphanenize eklenemedi !</value>
+  <data name="Admin_Was_Found_ByIdentityId" xml:space="preserve">
+    <value>IdentityId'ye göre admin bulunamadı !</value>
   </data>
-  <data name="Book_CouldNotBe_Deleted" xml:space="preserve">
-    <value>Kitap kütüphanenizden silinemedi !</value>
+  <data name="Admin_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value>Email'e göre admin bulunamadı !</value>
   </data>
-  <data name="Book_CouldNotBe_Updated" xml:space="preserve">
-    <value>Kütüphanenizde bulunan kitap güncellenemedi !</value>
+  <data name="Admin_Was_Not_Found_ById" xml:space="preserve">
+    <value>Id'ye göre admin bulunamadı !</value>
   </data>
-  <data name="Book_GetAllProcess_Was_Failed" xml:space="preserve">
-    <value>Kütüphanenizdeki kitapları getirme işlemi başarısız !</value>
-  </data>
-  <data name="Book_GetAllProcess_Was_Successful" xml:space="preserve">
-    <value>Kütüphanenizdeki kitapları getirme işlemi başarılı !</value>
-  </data>
-  <data name="Book_HasBeen_Added" xml:space="preserve">
-    <value>Kitap, kütüphanene başarılı bir şekilde eklendi !</value>
-  </data>
-  <data name="Book_HasBeen_Deleted" xml:space="preserve">
-    <value>Kitap kütüphanenizden başarılı bir şekilde silindi !</value>
-  </data>
-  <data name="Book_HasBeen_Updated" xml:space="preserve">
-    <value>Kütüphanenizde bulunan kitap başarılı bir şekilde güncellendi !</value>
-  </data>
-  <data name="Book_Was_Found_Successfully" xml:space="preserve">
-    <value>Kitap bulma işlemi başarılı !</value>
-  </data>
-  <data name="Book_Was_Not_Found" xml:space="preserve">
-    <value>Kitap bulunamadı !</value>
+  <data name="Admin_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value>IdentityId'ye göre admin bulunamadı !</value>
   </data>
   <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
     <value>Library hesabında email doğrulama kodu</value>
@@ -239,5 +236,41 @@
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Redis önbelleğinde entity bulunamadı !</value>
+  </data>
+  <data name="Student_Was_Found_ByEmail" xml:space="preserve">
+    <value>Email'e göre öğrenci bulundu !</value>
+  </data>
+  <data name="Student_Was_Found_ById" xml:space="preserve">
+    <value>Id'ye göre öğrenci bulundu !</value>
+  </data>
+  <data name="Student_Was_Found_ByIdentityId" xml:space="preserve">
+    <value>IdentityId'ye göre student bulunamadı !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value>Email'e göre öğrenci bulunamadı !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ById" xml:space="preserve">
+    <value>IdentityId'ye göre öğrenci bulunamadı !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value>IdentityId'ye göre öğrenci bulunamadı !</value>
+  </data>
+  <data name="Trainer_Was_Found_ByEmail" xml:space="preserve">
+    <value>Email'e göre eğitmen bulundu !</value>
+  </data>
+  <data name="Trainer_Was_Found_ById" xml:space="preserve">
+    <value>Id'ye göre eğitmen bulundu !</value>
+  </data>
+  <data name="Trainer_Was_Found_ByIdentityId" xml:space="preserve">
+    <value>IdentityId'ye göre eğitmen bulunamadı !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value>Email'e göre eğitmen bulunamadı !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ById" xml:space="preserve">
+    <value>IdentityId'ye göre öğrenci bulunamadı !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value>IdentityId'ye göre eğitmen bulunamadı !</value>
   </data>
 </root>

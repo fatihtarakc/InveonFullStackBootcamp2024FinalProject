@@ -7,6 +7,7 @@ global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
 global using MailKit.Net.Smtp;
 global using MailKit.Security;
+global using Mapster;
 global using MimeKit;
 global using System.Linq.Expressions;
 
@@ -18,4 +19,8 @@ global using InveonCourseApp.Backend.Core.Options;
 global using InveonCourseApp.Backend.Core.Resources;
 global using InveonCourseApp.Backend.Core.Utilities.Results.Abstract;
 global using InveonCourseApp.Backend.Core.Utilities.Results.Concrete;
+global using InveonCourseApp.Backend.DataAccess.Abstract.Repositories.Abstract;
+global using InveonCourseApp.Backend.Dtos.AdminDtos;
 global using InveonCourseApp.Backend.Dtos.EmailDtos;
+global using InveonCourseApp.Backend.Dtos.StudentDtos;
+global using InveonCourseApp.Backend.Dtos.TrainerDtos;

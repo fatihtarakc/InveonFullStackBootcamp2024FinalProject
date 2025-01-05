@@ -62,11 +62,7 @@
                 }
                 else if (auditablePersonBaseEntity is Trainer)
                 {
-                    if (auditablePersonBaseEntity.CreatedBy is not "super admin")
-                    {
-                        auditablePersonBaseEntity.AccountStatus = AccountStatus.Passive;
-                        auditablePersonBaseEntity.VerificationCode = HelperVerification.CodeGenerator();
-                    }
+                    if (auditablePersonBaseEntity.CreatedBy is not "super admin") auditablePersonBaseEntity.AccountStatus = AccountStatus.Passive;
                     else auditablePersonBaseEntity.AccountStatus = AccountStatus.Active;
                 }
                 else if (auditablePersonBaseEntity is Student)
@@ -75,7 +71,6 @@
                     {
                         auditablePersonBaseEntity.CreatedBy = $"{auditablePersonBaseEntity.IdentityId}";
                         auditablePersonBaseEntity.AccountStatus = AccountStatus.Passive;
-                        auditablePersonBaseEntity.VerificationCode = HelperVerification.CodeGenerator();
                     }
                     else auditablePersonBaseEntity.AccountStatus = AccountStatus.Active;
                 }

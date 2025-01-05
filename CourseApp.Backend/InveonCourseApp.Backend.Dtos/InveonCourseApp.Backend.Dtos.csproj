@@ -7,13 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AdminDtos\" />
     <Folder Include="CategoryDtos\" />
     <Folder Include="CourseDtos\" />
-    <Folder Include="TrainerDtos\" />
     <Folder Include="PaymentDtos\" />
-    <Folder Include="StudentDtos\" />
     <Folder Include="OrderDtos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InveonCourseApp.Backend.Core\InveonCourseApp.Backend.Core.csproj" />
   </ItemGroup>
 
 </Project>

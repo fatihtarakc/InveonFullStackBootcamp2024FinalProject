@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
+  <data name="Account_Email_Has_Already_Existed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Email_Has_Not_Confirmed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Email_Was_Confirmed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Has_Not_Activated" xml:space="preserve">
     <value />
   </data>
   <data name="Account_SignIn_Failed" xml:space="preserve">
@@ -126,46 +135,34 @@
   <data name="Account_SignIn_Successful" xml:space="preserve">
     <value />
   </data>
-  <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">
+  <data name="Account_Username_Has_Already_Existed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Was_Activated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Was_Found" xml:space="preserve">
     <value />
   </data>
   <data name="Account_Was_Not_Found" xml:space="preserve">
     <value />
   </data>
-  <data name="AppUser_CouldNotBe_Added" xml:space="preserve">
+  <data name="Admin_Was_Found_ByEmail" xml:space="preserve">
     <value />
   </data>
-  <data name="AppUser_HasBeen_Added" xml:space="preserve">
+  <data name="Admin_Was_Found_ById" xml:space="preserve">
     <value />
   </data>
-  <data name="Book_CouldNotBe_Added" xml:space="preserve">
+  <data name="Admin_Was_Found_ByIdentityId" xml:space="preserve">
     <value />
   </data>
-  <data name="Book_CouldNotBe_Deleted" xml:space="preserve">
+  <data name="Admin_Was_Not_Found_ByEmail" xml:space="preserve">
     <value />
   </data>
-  <data name="Book_CouldNotBe_Updated" xml:space="preserve">
+  <data name="Admin_Was_Not_Found_ById" xml:space="preserve">
     <value />
   </data>
-  <data name="Book_GetAllProcess_Was_Failed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Book_GetAllProcess_Was_Successful" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Book_HasBeen_Added" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Book_HasBeen_Deleted" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Book_HasBeen_Updated" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Book_Was_Found_Successfully" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Book_Was_Not_Found" xml:space="preserve">
+  <data name="Admin_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value />
   </data>
   <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
@@ -238,6 +235,43 @@
     <value />
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Found_ByEmail" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Found_ById" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Found_ByIdentityId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Not_Found_ById" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Found_ByEmail" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Trainer_Was_Found_ById" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Trainer_Was_Found_ByIdentityId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Not_Found_ById" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value />
   </data>
 </root>

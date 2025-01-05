@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_Email_Has_Already_Been_Exist" xml:space="preserve">
+  <data name="Account_Email_Has_Already_Existed" xml:space="preserve">
     <value>This email address can not be used !</value>
+  </data>
+  <data name="Account_Email_Has_Not_Confirmed" xml:space="preserve">
+    <value>This mail address has not confirmed yet !</value>
+  </data>
+  <data name="Account_Email_Was_Confirmed" xml:space="preserve">
+    <value>Email address was confirmed !</value>
+  </data>
+  <data name="Account_Has_Not_Activated" xml:space="preserve">
+    <value>This ccount has not activated yet !</value>
   </data>
   <data name="Account_SignIn_Failed" xml:space="preserve">
     <value>Login failed. This email address or password is incorrect !</value>
@@ -126,47 +135,35 @@
   <data name="Account_SignIn_Successful" xml:space="preserve">
     <value>Login successful !</value>
   </data>
-  <data name="Account_Username_Has_Already_Been_Exist" xml:space="preserve">
+  <data name="Account_Username_Has_Already_Existed" xml:space="preserve">
     <value>This username can not be used !</value>
+  </data>
+  <data name="Account_Was_Activated" xml:space="preserve">
+    <value>Account was activated !</value>
+  </data>
+  <data name="Account_Was_Found" xml:space="preserve">
+    <value>Account was found !</value>
   </data>
   <data name="Account_Was_Not_Found" xml:space="preserve">
     <value>Account was not found !</value>
   </data>
-  <data name="AppUser_CouldNotBe_Added" xml:space="preserve">
-    <value>User could not be added to Library !</value>
+  <data name="Admin_Was_Found_ByEmail" xml:space="preserve">
+    <value>Admin was found by email !</value>
   </data>
-  <data name="AppUser_HasBeen_Added" xml:space="preserve">
-    <value>User has been added successfully to Library !</value>
+  <data name="Admin_Was_Found_ById" xml:space="preserve">
+    <value>Admin was found by id !</value>
   </data>
-  <data name="Book_CouldNotBe_Added" xml:space="preserve">
-    <value>Book could not be added to your library !</value>
+  <data name="Admin_Was_Found_ByIdentityId" xml:space="preserve">
+    <value>Admin was found by identity id !</value>
   </data>
-  <data name="Book_CouldNotBe_Deleted" xml:space="preserve">
-    <value>Book could not be deleted from your library !</value>
+  <data name="Admin_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value>Admin was not found by email !</value>
   </data>
-  <data name="Book_CouldNotBe_Updated" xml:space="preserve">
-    <value>Book could not be updated in your library !</value>
+  <data name="Admin_Was_Not_Found_ById" xml:space="preserve">
+    <value>Admin was not found by id !</value>
   </data>
-  <data name="Book_GetAllProcess_Was_Failed" xml:space="preserve">
-    <value>Get all books process was failed from your library !</value>
-  </data>
-  <data name="Book_GetAllProcess_Was_Successful" xml:space="preserve">
-    <value>Get all books process was successful from your library !</value>
-  </data>
-  <data name="Book_HasBeen_Added" xml:space="preserve">
-    <value>Book has been added successfully to your library !</value>
-  </data>
-  <data name="Book_HasBeen_Deleted" xml:space="preserve">
-    <value>Book has been deleted successfully from your library !</value>
-  </data>
-  <data name="Book_HasBeen_Updated" xml:space="preserve">
-    <value>Book has been updated successfully in your library !</value>
-  </data>
-  <data name="Book_Was_Found_Successfully" xml:space="preserve">
-    <value>Book was found successfully !</value>
-  </data>
-  <data name="Book_Was_Not_Found" xml:space="preserve">
-    <value>Book was not found !</value>
+  <data name="Admin_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value>Admin was not found by identity id !</value>
   </data>
   <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
     <value>In Library account, email verification code</value>
@@ -239,5 +236,41 @@
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Entity was not found in Redis cache !</value>
+  </data>
+  <data name="Student_Was_Found_ByEmail" xml:space="preserve">
+    <value>Student was found by email !</value>
+  </data>
+  <data name="Student_Was_Found_ById" xml:space="preserve">
+    <value>Student was found by id !</value>
+  </data>
+  <data name="Student_Was_Found_ByIdentityId" xml:space="preserve">
+    <value>Student was found by identity id !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value>Student was not found by email !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ById" xml:space="preserve">
+    <value>Student was not found by id !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value>Student was not found by identity id !</value>
+  </data>
+  <data name="Trainer_Was_Found_ByEmail" xml:space="preserve">
+    <value>Trainer was found by email !</value>
+  </data>
+  <data name="Trainer_Was_Found_ById" xml:space="preserve">
+    <value>Trainer was found by id !</value>
+  </data>
+  <data name="Trainer_Was_Found_ByIdentityId" xml:space="preserve">
+    <value>Trainer was found by identity id !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ByEmail" xml:space="preserve">
+    <value>Trainer was not found by email !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ById" xml:space="preserve">
+    <value>Trainer was not found by id !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
+    <value>Trainer was not found by identity id !</value>
   </data>
 </root>

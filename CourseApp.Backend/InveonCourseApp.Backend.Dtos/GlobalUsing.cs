@@ -1,1 +1,1 @@
-﻿
+﻿global using InveonCourseApp.Backend.Core.Enums;

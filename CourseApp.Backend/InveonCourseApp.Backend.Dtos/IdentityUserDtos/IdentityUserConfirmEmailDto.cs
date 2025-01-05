@@ -1,6 +1,6 @@
 ﻿namespace InveonCourseApp.Backend.Dtos.IdentityUserDtos
 {
-    public class IdentityUserEmailConfirmDto
+    public class IdentityUserConfirmEmailDto
     {
         public string Email { get; set; }
         public string VerificationCode { get; set; }
