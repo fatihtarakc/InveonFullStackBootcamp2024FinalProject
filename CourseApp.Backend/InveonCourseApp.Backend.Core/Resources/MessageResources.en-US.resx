@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account_Birthdate_Age_Cannot_Be_LessThan_7YearsOld" xml:space="preserve">
+    <value>You cannot be less than 7 years old !</value>
+  </data>
+  <data name="Account_Digits_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Digits cannot be used for name !</value>
+  </data>
+  <data name="Account_Digits_ForSurname_Cannot_Be_Used" xml:space="preserve">
+    <value>Digits cannot be used for surname !</value>
+  </data>
+  <data name="Account_Digits_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Digits cannot be used for username !</value>
+  </data>
+  <data name="Account_Email_Cannot_Be_GreaterThan_50Characters" xml:space="preserve">
+    <value>Email length cannot be greater than 50 characters !</value>
+  </data>
+  <data name="Account_Email_Cannot_Be_LessThan_10Characters" xml:space="preserve">
+    <value>Email length cannot be less than 10 characters !</value>
+  </data>
   <data name="Account_Email_Has_Already_Existed" xml:space="preserve">
     <value>This email address can not be used !</value>
   </data>
@@ -127,13 +145,85 @@
     <value>Email address was confirmed !</value>
   </data>
   <data name="Account_Has_Not_Activated" xml:space="preserve">
-    <value>This ccount has not activated yet !</value>
+    <value>This account has not activated yet !</value>
+  </data>
+  <data name="Account_Name_Cannot_Be_GreaterThan_25Characters" xml:space="preserve">
+    <value>Name length cannot be greater than 25 characters !</value>
+  </data>
+  <data name="Account_Name_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Name length cannot be less than 2 characters !</value>
+  </data>
+  <data name="Account_Password_Cannot_Be_GreaterThan_25Characters" xml:space="preserve">
+    <value>Password length cannot be greater than 25 characters !</value>
+  </data>
+  <data name="Account_Password_Cannot_Be_LessThan_8Characters" xml:space="preserve">
+    <value>Password length cannot be less than 8 characters !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1Digit_AtLeast" xml:space="preserve">
+    <value>Password must include one number  at least!</value>
+  </data>
+  <data name="Account_Password_Must_Include_1LowerLetter_AtLeast" xml:space="preserve">
+    <value>Password must include one lower letter at least !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1Symbol_AtLeast" xml:space="preserve">
+    <value>Password must include one symbol at least !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1UpperLetter_AtLeast" xml:space="preserve">
+    <value>Password must include one upper letter at least !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Birthdate" xml:space="preserve">
+    <value>Please enter your birthdate !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Email" xml:space="preserve">
+    <value>Please enter your email address !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Name" xml:space="preserve">
+    <value>Please enter your name !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Password" xml:space="preserve">
+    <value>Please enter your password !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Surname" xml:space="preserve">
+    <value>Please enter your surname !</value>
+  </data>
+  <data name="Account_Role_Was_Not_Found_For_IdentityUser" xml:space="preserve">
+    <value>Account role was not found for identity user !</value>
   </data>
   <data name="Account_SignIn_Failed" xml:space="preserve">
     <value>Login failed. This email address or password is incorrect !</value>
   </data>
   <data name="Account_SignIn_Successful" xml:space="preserve">
     <value>Login successful !</value>
+  </data>
+  <data name="Account_Surname_Cannot_Be_GreaterThan_25Characters" xml:space="preserve">
+    <value>Surname length cannot be greater than 25 characters !</value>
+  </data>
+  <data name="Account_Surname_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Surname legth cannot be less than 2 characters !</value>
+  </data>
+  <data name="Account_Symbols_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Symbols cannot be used for name !</value>
+  </data>
+  <data name="Account_Symbols_ForSurname_Cannot_Be_Used" xml:space="preserve">
+    <value>Symbols cannot be used for surname !</value>
+  </data>
+  <data name="Account_Symbols_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Symbols cannot be used for username !</value>
+  </data>
+  <data name="Account_TurkishCharacters_ForEmail_Cannot_Be_Used" xml:space="preserve">
+    <value>Turkish charachters cannot be used for email !</value>
+  </data>
+  <data name="Account_TurkishCharacters_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Turkish charachters cannot be used for username !</value>
+  </data>
+  <data name="Account_UpperLetters_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Upper letters cannot be used for username !</value>
+  </data>
+  <data name="Account_Username_Cannot_Be_GreaterThan_20Characters" xml:space="preserve">
+    <value>Username length cannot be greater than 20 characters !</value>
+  </data>
+  <data name="Account_Username_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value>Userame length cannot be less than 5 characters !</value>
   </data>
   <data name="Account_Username_Has_Already_Existed" xml:space="preserve">
     <value>This username can not be used !</value>
@@ -165,40 +255,55 @@
   <data name="Admin_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>Admin was not found by identity id !</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
-    <value>In Library account, email verification code</value>
+  <data name="EmailContent_Has_Been_Sent_For_ActivateAccount" xml:space="preserve">
+    <value>Inveon Course App account activation code</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
-    <value>Your new account was created in Library !</value>
+  <data name="EmailContent_Has_Been_Sent_For_ConfirmEmail" xml:space="preserve">
+    <value>Inveon Course App account email verification code</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
-    <value>In Library account, password change process verification code</value>
+  <data name="EmailContent_Has_Been_Sent_For_NewStudent" xml:space="preserve">
+    <value>Your new student account was created in Inveon Course App !</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
-    <value>In Library account, two factor authentication process verification code</value>
+  <data name="EmailContent_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
+    <value>Your new trainer account was created in Inveon Course App !</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
-    <value>Library account email verification code !</value>
+  <data name="EmailSubject_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+    <value>Inveon Course App account password change process verification code</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
-    <value>New Library Account !</value>
+  <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
+    <value>Inveon Course App account two factor authentication process verification code</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
-    <value>Library account password change verification code !</value>
+  <data name="EmailSubject_Has_Been_Sent_For_ActivateAccount" xml:space="preserve">
+    <value>Inveon Course App account activation code !</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
-    <value>Library account two factor authentication process !</value>
+  <data name="EmailSubject_Has_Been_Sent_For_ConfirmEmail" xml:space="preserve">
+    <value>Inveon Course App account email verification code !</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+  <data name="EmailSubject_Has_Been_Sent_For_NewStudent" xml:space="preserve">
+    <value>New Inveon Course App student account !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
+    <value>New Inveon Course App trainer account !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
+    <value>Inveon Course App account two factor authentication process verification code !</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_ActivateAccount" xml:space="preserve">
     <value>Hello</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_ConfirmEmail" xml:space="preserve">
     <value>Hello</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_NewStudent" xml:space="preserve">
     <value>Hello</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
     <value>Hello</value>
   </data>
   <data name="Email_SendingProcess_Was_Failed" xml:space="preserve">
@@ -237,6 +342,12 @@
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Entity was not found in Redis cache !</value>
   </data>
+  <data name="Student_Could_Not_Added" xml:space="preserve">
+    <value>Student could not added !</value>
+  </data>
+  <data name="Student_Was_Added_Successfully" xml:space="preserve">
+    <value>Student was added successfully !</value>
+  </data>
   <data name="Student_Was_Found_ByEmail" xml:space="preserve">
     <value>Student was found by email !</value>
   </data>
@@ -255,6 +366,12 @@
   <data name="Student_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>Student was not found by identity id !</value>
   </data>
+  <data name="Token_Could_Not_Generated" xml:space="preserve">
+    <value>Token could not generated !</value>
+  </data>
+  <data name="Token_Was_Generated_Successfully" xml:space="preserve">
+    <value>Token was generated successfully !</value>
+  </data>
   <data name="Trainer_Was_Found_ByEmail" xml:space="preserve">
     <value>Trainer was found by email !</value>
   </data>
@@ -272,5 +389,8 @@
   </data>
   <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>Trainer was not found by identity id !</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+    <value>Inveon Course App account password change process verification code</value>
   </data>
 </root>

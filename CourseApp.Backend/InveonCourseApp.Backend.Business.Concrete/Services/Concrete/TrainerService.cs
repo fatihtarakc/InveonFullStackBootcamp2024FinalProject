@@ -2,12 +2,16 @@
 {
     public class TrainerService : ITrainerService
     {
+        private readonly IAccountService accountService;
         private readonly ITrainerRepository trainerRepository;
+        private readonly IUnitOfWork unitOfWork;
         private readonly IStringLocalizer<MessageResources> stringLocalizer;
         private readonly ILogger<TrainerService> logger;
-        public TrainerService(ITrainerRepository trainerRepository, IStringLocalizer<MessageResources> stringLocalizer, ILogger<TrainerService> logger)
+        public TrainerService(IAccountService accountService, ITrainerRepository trainerRepository, IUnitOfWork unitOfWork, IStringLocalizer<MessageResources> stringLocalizer, ILogger<TrainerService> logger)
         {
+            this.accountService = accountService;
             this.trainerRepository = trainerRepository;
+            this.unitOfWork = unitOfWork;
             this.stringLocalizer = stringLocalizer;
             this.logger = logger;
         }

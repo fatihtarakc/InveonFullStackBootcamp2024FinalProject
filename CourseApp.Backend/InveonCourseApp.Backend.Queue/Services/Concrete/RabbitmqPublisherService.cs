@@ -12,17 +12,18 @@
             this.logger = logger;
         }
 
-        public async Task<IResult> EnqueueModelAsync<T>(T queueDataModel, string queueName) where T : class, new()
+        public IResult EnqueueModel<T>(T queueDataModel, string queueName) where T : class, new()
         {
             try
             {
-                using (var channel = await rabbitmqService.CreateChannelAsync())
+                using (var connection = rabbitmqService.CreateConnection())
+                using (var channel = connection.CreateModel())
                 {
-                    await channel.QueueDeclareAsync(queue: queueName,
+                    channel.QueueDeclare(queue: queueName,
                         durable: true, exclusive: false, autoDelete: false, arguments: null);
 
                     var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(queueDataModel));
-                    await channel.BasicPublishAsync(exchange: "", routingKey: queueName, body: body);
+                    channel.BasicPublish(exchange: "", routingKey: queueName, body: body);
                 }
 
                 return new SuccessResult(stringLocalizer[Message.Rabbitmq_EnqueueModelProcess_Was_Successful]);
@@ -34,13 +35,14 @@
             }
         }
 
-        public async Task<IResult> EnqueueModelsAsync<T>(IEnumerable<T> queueDataModels, string queueName) where T : class, new()
+        public IResult EnqueueModels<T>(IEnumerable<T> queueDataModels, string queueName) where T : class, new()
         {
             try
             {
-                using (var channel = await rabbitmqService.CreateChannelAsync())
+                using (var connection = rabbitmqService.CreateConnection())
+                using (var channel = connection.CreateModel())
                 {
-                    await channel.QueueDeclareAsync(queue: queueName,
+                    channel.QueueDeclare(queue: queueName,
                         durable: true,
                         exclusive: false,
                         autoDelete: false,
@@ -49,7 +51,7 @@
                     foreach (var queueDataModel in queueDataModels)
                     {
                         var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(queueDataModel));
-                        await channel.BasicPublishAsync(exchange: "", routingKey: queueName, body: body);
+                        channel.BasicPublish(exchange: "", routingKey: queueName, body: body);
                     }
                 }
 

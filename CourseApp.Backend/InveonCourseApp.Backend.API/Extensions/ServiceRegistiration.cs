@@ -15,7 +15,32 @@
 
         public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
         {
+            var tokenOptions = configuration.GetSection(TokenOptions.TokenConfiguration).Get<TokenOptions>()!;
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                }).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = true;
+
+                options.TokenValidationParameters = new()
+                {
+                    ValidateAudience = true,
+                    ValidateIssuer = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    ValidAudience = tokenOptions.Audience,
+                    ValidIssuer = tokenOptions.Issuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenOptions.IssuerSigningSymmetricSecurityKey))
+                };
+            });
+
+            services.AddFluentValidationAutoValidation().AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
             services.AddLocalization();
+            
             return services;
         }
 

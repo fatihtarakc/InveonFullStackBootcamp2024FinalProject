@@ -4,7 +4,7 @@
     {
         public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
+            var connectionOptions = configuration.GetSection(ConnectionOptions.ConnectionConfiguration).Get<ConnectionOptions>();
             services.AddDbContext<InveonCourseAppDbContext>(dbContextOptionsBuilder =>
             {
                 dbContextOptionsBuilder.UseLazyLoadingProxies();

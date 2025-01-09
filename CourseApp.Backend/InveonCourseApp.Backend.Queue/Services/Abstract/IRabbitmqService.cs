@@ -2,6 +2,8 @@
 {
     public interface IRabbitmqService
     {
-        Task<IChannel> CreateChannelAsync();
+        IConnection CreateConnection();
+
+        IModel CreateModel(IConnection connection);
     }
 }

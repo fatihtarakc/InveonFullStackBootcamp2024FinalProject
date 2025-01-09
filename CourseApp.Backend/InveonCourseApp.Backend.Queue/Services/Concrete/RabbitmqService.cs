@@ -8,22 +8,24 @@
             this.connectionOptions = connectionOptions.Value;
         }
 
-        public async Task<IChannel> CreateChannelAsync()
+        public IConnection CreateConnection()
         {
             try
             {
-                var factory = new ConnectionFactory { Uri = new Uri(connectionOptions.Rabbitmq) };
+                var rabbitmq = connectionOptions.Rabbitmq;
+                var factory = new ConnectionFactory { /*Port = rabbitmq.Port, */HostName = rabbitmq.Hostname, VirtualHost = rabbitmq.Virtualhost, UserName = rabbitmq.Username, Password = rabbitmq.Password };
                 factory.AutomaticRecoveryEnabled = true;  // Otomatik bağlantıyı etkinleştirmek için.
                 factory.NetworkRecoveryInterval = TimeSpan.FromSeconds(10);  // Her 10 saniye de bir tekrar bağlanmaya çalışır.
                 factory.TopologyRecoveryEnabled = false;  // Sunucudan bağlantısı kesildikten sonra kuyruktaki mesaj tüketimini sürdürmez.
-                var connection = await factory.CreateConnectionAsync();
-                return await connection.CreateChannelAsync();
+                return factory.CreateConnection();
             }
-            catch (Exception exception)
+            catch
             {
                 Thread.Sleep(5000);
-                return await CreateChannelAsync();
+                return CreateConnection();
             }
         }
+
+        public IModel CreateModel(IConnection connection) => connection.CreateModel();
     }
 }

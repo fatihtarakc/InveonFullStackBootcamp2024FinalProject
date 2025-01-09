@@ -1,6 +1,6 @@
 ﻿namespace InveonCourseApp.Backend.Dtos.EmailDtos
 {
-    public class EmailForVerificationCodeDto
+    public class EmailForChangePasswordDto
     {
         public string To { get; set; }
         public string EmailTo { get; set; }

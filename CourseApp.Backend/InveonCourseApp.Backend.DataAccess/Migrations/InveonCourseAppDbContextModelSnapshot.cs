@@ -690,7 +690,7 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .IsRequired()
-                        .HasMaxLength(50)
+                        .HasMaxLength(20)
                         .HasColumnType("varchar");
 
                     b.Property<string>("PasswordHash")
@@ -710,7 +710,7 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasMaxLength(50)
+                        .HasMaxLength(20)
                         .HasColumnType("varchar");
 
                     b.HasKey("Id");
@@ -731,11 +731,11 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
 
                     b.ToTable("AspNetUsers", null, t =>
                         {
-                            t.HasCheckConstraint("IdentityUser_Email_MinLength_Control", "Len(Email) >= 5");
+                            t.HasCheckConstraint("IdentityUser_Email_MinLength_Control", "Len(Email) >= 10");
 
                             t.HasCheckConstraint("IdentityUser_Id_Length_Control", "Len(Id) = 36");
 
-                            t.HasCheckConstraint("IdentityUser_NormalizedEmail_MinLength_Control", "Len(NormalizedEmail) >= 5");
+                            t.HasCheckConstraint("IdentityUser_NormalizedEmail_MinLength_Control", "Len(NormalizedEmail) >= 10");
 
                             t.HasCheckConstraint("IdentityUser_NormalizedUserName_MinLength_Control", "Len(NormalizedUserName) >= 5");
 

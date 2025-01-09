@@ -214,9 +214,9 @@
             {
                 EmailConfirmed = true,
                 Email = admin.Email,
-                UserName = $"{admin.Name}{admin.Surname}".ToLowerInvariant(),
+                UserName = $"{admin.Name}{admin.Surname}".Substring(0, 5).ToLowerInvariant(),
                 NormalizedEmail = admin.Email.ToUpperInvariant(),
-                NormalizedUserName = $"{admin.Name}{admin.Surname}".ToUpperInvariant()
+                NormalizedUserName = $"{admin.Name}{admin.Surname}".Substring(0, 5).ToUpperInvariant()
             };
 
             identityUser.PasswordHash = userManager.PasswordHasher.HashPassword(identityUser, $"{admin.Name}{admin.Surname}2024+-!?");
@@ -241,9 +241,9 @@
             {
                 EmailConfirmed = true,
                 Email = student.Email,
-                UserName = $"{student.Name}{student.Surname}".ToLowerInvariant(),
+                UserName = $"{student.Name}{student.Surname}".Substring(0, 5).ToLowerInvariant(),
                 NormalizedEmail = student.Email.ToUpperInvariant(),
-                NormalizedUserName = $"{student.Name}{student.Surname}".ToUpperInvariant()
+                NormalizedUserName = $"{student.Name}{student.Surname}".Substring(0, 5).ToUpperInvariant()
             };
 
             identityUser.PasswordHash = userManager.PasswordHasher.HashPassword(identityUser, $"{student.Name}{student.Surname}2024+-!?");

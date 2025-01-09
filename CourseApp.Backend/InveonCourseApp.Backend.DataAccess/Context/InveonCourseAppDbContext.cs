@@ -55,6 +55,9 @@
             if (auditableBaseEntity is AuditablePersonBaseEntity)
             {
                 var auditablePersonBaseEntity = (AuditablePersonBaseEntity)auditableBaseEntity;
+                auditablePersonBaseEntity.Name = auditablePersonBaseEntity.Name.ToUpper();
+                auditablePersonBaseEntity.Surname = auditablePersonBaseEntity.Surname.ToUpper();
+
                 if (auditablePersonBaseEntity is Admin)
                 {
                     auditablePersonBaseEntity.CreatedBy = "super admin";

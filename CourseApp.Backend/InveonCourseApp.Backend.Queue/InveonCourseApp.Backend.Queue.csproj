@@ -7,13 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.4" />
+    <PackageReference Include="MailKit" Version="4.9.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.11" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InveonCourseApp.Backend.Business.Concrete\InveonCourseApp.Backend.Business.Concrete.csproj" />
+    <ProjectReference Include="..\InveonCourseApp.Backend.Dtos\InveonCourseApp.Backend.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

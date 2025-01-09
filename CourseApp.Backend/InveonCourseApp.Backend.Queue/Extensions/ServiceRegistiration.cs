@@ -4,18 +4,11 @@
     {
         public static IServiceCollection AddQueueServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IObjectConvertFormatService, ObjectConvertFormatService>();
             services.AddScoped<IRabbitmqConsumerService, RabbitmqConsumerService>();
             services.AddScoped<IRabbitmqPublisherService, RabbitmqPublisherService>();
-            services.AddScoped<IRabbitmqService, RabbitmqService>(serviceProvider =>
-            {
-                var iOptionsConnectionOptions = serviceProvider.GetRequiredService<IOptions<ConnectionOptions>>();
-                //var connectionOptions = configuration.GetSection(ConnectionOptions.Connections).Get<ConnectionOptions>();
-
-                var rabbitmq = new RabbitmqService(iOptionsConnectionOptions);
-                rabbitmq.CreateChannelAsync().Wait();
-                return rabbitmq;
-            });
+            services.AddScoped<IRabbitmqService, RabbitmqService>();
 
             return services;
         }

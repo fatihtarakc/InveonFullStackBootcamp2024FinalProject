@@ -8,12 +8,14 @@
             this.rabbitmqConsumerService = rabbitmqConsumerService;
         }
 
-        public async Task ExecuteAsync()
+        public void Execute()
         {
-            await rabbitmqConsumerService.StartSendingEmailForNewAppUserAsync();
-            await rabbitmqConsumerService.StartSendingEmailForEmailVerificationCodeAsync();
-            await rabbitmqConsumerService.StartSendingEmailForPasswordChangeVerificationCodeAsync();
-            await rabbitmqConsumerService.StartSendingEmailForTwoFactorAuthenticationVerificationCodeAsync();
+            rabbitmqConsumerService.StartSendingEmailForNewStudent();
+            rabbitmqConsumerService.StartSendingEmailForNewTrainer();
+            rabbitmqConsumerService.StartSendingEmailForActivateAccount();
+            rabbitmqConsumerService.StartSendingEmailForConfirmEmail();
+            rabbitmqConsumerService.StartSendingEmailForChangePassword();
+            rabbitmqConsumerService.StartSendingEmailForTwoFactorAuthentication();
         }
     }
 }

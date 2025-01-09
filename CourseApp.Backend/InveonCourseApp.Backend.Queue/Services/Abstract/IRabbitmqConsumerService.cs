@@ -2,12 +2,16 @@
 {
     public interface IRabbitmqConsumerService
     {
-        Task<IResult> StartSendingEmailForNewAppUserAsync();
+        void StartSendingEmailForNewStudent();
 
-        Task<IResult> StartSendingEmailForEmailVerificationCodeAsync();
+        void StartSendingEmailForNewTrainer();
 
-        Task<IResult> StartSendingEmailForPasswordChangeVerificationCodeAsync();
+        void StartSendingEmailForActivateAccount();
 
-        Task<IResult> StartSendingEmailForTwoFactorAuthenticationVerificationCodeAsync();
+        void StartSendingEmailForConfirmEmail();
+
+        void StartSendingEmailForChangePassword();
+
+        void StartSendingEmailForTwoFactorAuthentication();
     }
 }

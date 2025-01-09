@@ -15,93 +15,91 @@
             this.stringLocalizer = stringLocalizer;
             this.logger = logger;
         }
-
-        private async Task<IResult> StartSendingEmailAsync(AsyncEventHandler<BasicDeliverEventArgs> asyncEventHandler, string queueName)
+        private void StartSendingEmail(EventHandler<BasicDeliverEventArgs> basicDeliverEventHandler, string queueName)
         {
             try
             {
-                var channel = await rabbitmqService.CreateChannelAsync();
-                await channel.QueueDeclareAsync(queue: queueName,
+                var connection = rabbitmqService.CreateConnection();
+
+                var channel = rabbitmqService.CreateModel(connection);
+
+                channel.QueueDeclare(queue: queueName,
                         durable: true, exclusive: false, autoDelete: false, arguments: null);
 
-                var eventingBasicConsumer = new AsyncEventingBasicConsumer(channel);
-                eventingBasicConsumer.ReceivedAsync += asyncEventHandler;
-                await channel.BasicConsumeAsync(queue: queueName, autoAck: true, consumer: eventingBasicConsumer);
-                return new SuccessResult(stringLocalizer[Message.Rabbitmq_StartSendingEmailProcess_Was_Successful]);
+                var eventingBasicConsumer = new EventingBasicConsumer(channel);
+                eventingBasicConsumer.Received += basicDeliverEventHandler;
+                channel.BasicConsume(queue: queueName, autoAck: true, consumer: eventingBasicConsumer);
             }
             catch (Exception exception)
             {
-                logger.LogError(exception.Message);
-                return new ErrorResult($"{stringLocalizer[Message.Rabbitmq_StartSendingEmailProcess_Was_Failed]} : {exception.Message}");
+                logger.LogError($"{stringLocalizer[Message.Rabbitmq_StartSendingEmailProcess_Was_Failed]} : {exception.Message}");
             }
         }
 
-        public async Task<IResult> StartSendingEmailForNewAppUserAsync()
+        public void StartSendingEmailForNewStudent() =>
+            StartSendingEmail(basicDeliverEventHandler: ConsumerReceivedEmailForNewStudent!, queueName: QueueName.NewStudent);
+        private void ConsumerReceivedEmailForNewStudent(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
         {
-            var result = await StartSendingEmailAsync(asyncEventHandler: ConsumerReceivedEmailForNewAppUserAsync, queueName: QueueName.NewAppUser);
-            if (result.IsSuccess) return new SuccessResult(result.Message);
+            var emailForNewStudentDto = objectConvertFormatService.ToObjectFromJson<EmailForNewStudentDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
+            emailService.SendingEmailForNewStudentAsync(emailForNewStudentDto);
 
-            return new ErrorResult(result.Message);
-        }
-        private async Task<IResult> ConsumerReceivedEmailForNewAppUserAsync(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
-        {
-            var emailForNewAppUserDto = objectConvertFormatService.ToObjectFromJson<EmailForNewAppUserDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
-            var result = await emailService.SendingEmailForNewAppUserAsync(emailForNewAppUserDto);
-            if (!result.IsSuccess) return new ErrorResult(result.Message);
-
-            Console.WriteLine($"New AppUser - {emailForNewAppUserDto.To} : It was sent email to  {emailForNewAppUserDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
-            return new SuccessResult(result.Message);
+            Console.WriteLine($"New Student - {emailForNewStudentDto.To} : It was sent email to  {emailForNewStudentDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+            logger.LogInformation($"New Student - {emailForNewStudentDto.To} : It was sent email to  {emailForNewStudentDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
         }
 
-        public async Task<IResult> StartSendingEmailForEmailVerificationCodeAsync()
+        public void StartSendingEmailForNewTrainer() =>
+            StartSendingEmail(basicDeliverEventHandler: ConsumerReceivedEmailForNewTrainer!, queueName: QueueName.NewTrainer);
+        private void ConsumerReceivedEmailForNewTrainer(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
         {
-            var result = await StartSendingEmailAsync(asyncEventHandler: ConsumerReceivedEmailForEmailVerificationCodeAsync, queueName: QueueName.EmailVerificationCode);
-            if (result.IsSuccess) return new SuccessResult(result.Message);
+            var emailForNewTrainerDto = objectConvertFormatService.ToObjectFromJson<EmailForNewTrainerDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
+            emailService.SendingEmailForNewTrainerAsync(emailForNewTrainerDto);
 
-            return new ErrorResult(result.Message);
-        }
-        private async Task<IResult> ConsumerReceivedEmailForEmailVerificationCodeAsync(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
-        {
-            var emailForVerificationCodeDto = objectConvertFormatService.ToObjectFromJson<EmailForVerificationCodeDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
-            var result = await emailService.SendingEmailForEmailVerificationCodeAsync(emailForVerificationCodeDto);
-            if (!result.IsSuccess) return new ErrorResult(result.Message);
-
-            Console.WriteLine($"AppUser - {emailForVerificationCodeDto.To} : {emailForVerificationCodeDto.VerificationCode} verification code for email verification was sent email to {emailForVerificationCodeDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
-            return new SuccessResult(result.Message);
+            Console.WriteLine($"New Trainer - {emailForNewTrainerDto.To} : It was sent email to  {emailForNewTrainerDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+            logger.LogInformation($"New Trainer - {emailForNewTrainerDto.To} : It was sent email to  {emailForNewTrainerDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
         }
 
-        public async Task<IResult> StartSendingEmailForPasswordChangeVerificationCodeAsync()
+        public void StartSendingEmailForActivateAccount() =>
+            StartSendingEmail(basicDeliverEventHandler: ConsumerReceivedEmailForActivateAccount!, queueName: QueueName.ActivateAccount);
+        private void ConsumerReceivedEmailForActivateAccount(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
         {
-            var result = await StartSendingEmailAsync(asyncEventHandler: ConsumerReceivedEmailForPasswordChangeVerificationCodeAsync, queueName: QueueName.PasswordChangeVerificationCode);
-            if (result.IsSuccess) return new SuccessResult(result.Message);
+            var emailForActivateAccountDto = objectConvertFormatService.ToObjectFromJson<EmailForActivateAccountDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
+            emailService.SendingEmailForActivateAccountAsync(emailForActivateAccountDto);
 
-            return new ErrorResult(result.Message);
-        }
-        private async Task<IResult> ConsumerReceivedEmailForPasswordChangeVerificationCodeAsync(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
-        {
-            var emailForVerificationCodeDto = objectConvertFormatService.ToObjectFromJson<EmailForVerificationCodeDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
-            var result = await emailService.SendingEmailForPasswordChangeVerificationCodeAsync(emailForVerificationCodeDto);
-            if (!result.IsSuccess) return new ErrorResult(result.Message);
-
-            Console.WriteLine($"AppUser - {emailForVerificationCodeDto.To} : {emailForVerificationCodeDto.VerificationCode} verification code for password change was sent email to {emailForVerificationCodeDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
-            return new SuccessResult(result.Message);
+            Console.WriteLine($"Activate account - {emailForActivateAccountDto.To} : {emailForActivateAccountDto.VerificationCode} verification code for account activation was sent email to {emailForActivateAccountDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+            logger.LogInformation($"Activate account - {emailForActivateAccountDto.To} : {emailForActivateAccountDto.VerificationCode} verification code for account activation was sent email to {emailForActivateAccountDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
         }
 
-        public async Task<IResult> StartSendingEmailForTwoFactorAuthenticationVerificationCodeAsync()
+        public void StartSendingEmailForConfirmEmail() =>
+            StartSendingEmail(basicDeliverEventHandler: ConsumerReceivedEmailForConfirmEmail!, queueName: QueueName.ConfirmEmail);
+        private void ConsumerReceivedEmailForConfirmEmail(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
         {
-            var result = await StartSendingEmailAsync(asyncEventHandler: ConsumerReceivedEmailForTwoFactorAuthenticationVerificationCodeAsync, queueName: QueueName.TwoFactorAuthenticationVerificationCode);
-            if (result.IsSuccess) return new SuccessResult(result.Message);
+            var emailForConfirmEmailDto = objectConvertFormatService.ToObjectFromJson<EmailForConfirmEmailDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
+            emailService.SendingEmailForConfirmEmailAsync(emailForConfirmEmailDto);
 
-            return new ErrorResult(result.Message);
+            Console.WriteLine($"Confirm email - {emailForConfirmEmailDto.To} : {emailForConfirmEmailDto.VerificationCode} verification code for email verification was sent email to {emailForConfirmEmailDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+            logger.LogInformation($"Confirm email - {emailForConfirmEmailDto.To} : {emailForConfirmEmailDto.VerificationCode} verification code for email verification was sent email to {emailForConfirmEmailDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
         }
-        private async Task<IResult> ConsumerReceivedEmailForTwoFactorAuthenticationVerificationCodeAsync(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
-        {
-            var emailForVerificationCodeDto = objectConvertFormatService.ToObjectFromJson<EmailForVerificationCodeDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
-            var result = await emailService.SendingEmailForTwoFactorAuthenticationVerificationCodeAsync(emailForVerificationCodeDto);
-            if (!result.IsSuccess) return new ErrorResult(result.Message);
 
-            Console.WriteLine($"AppUser - {emailForVerificationCodeDto.To} : {emailForVerificationCodeDto.VerificationCode} verification code for two factor authentication was sent email to {emailForVerificationCodeDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
-            return new SuccessResult(result.Message);
+        public void StartSendingEmailForChangePassword() =>
+            StartSendingEmail(basicDeliverEventHandler: ConsumerReceivedEmailForChangePassword!, queueName: QueueName.ChangePassword);
+        private void ConsumerReceivedEmailForChangePassword(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
+        {
+            var emailForChangePasswordDto = objectConvertFormatService.ToObjectFromJson<EmailForChangePasswordDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
+            emailService.SendingEmailForChangePasswordAsync(emailForChangePasswordDto);
+
+            Console.WriteLine($"Change password - {emailForChangePasswordDto.To} : {emailForChangePasswordDto.VerificationCode} verification code for password change was sent email to {emailForChangePasswordDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+            logger.LogInformation($"Change password - {emailForChangePasswordDto.To} : {emailForChangePasswordDto.VerificationCode} verification code for password change was sent email to {emailForChangePasswordDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+        }
+
+        public void StartSendingEmailForTwoFactorAuthentication() =>
+            StartSendingEmail(basicDeliverEventHandler: ConsumerReceivedEmailForTwoFactorAuthentication!, queueName: QueueName.TwoFactorAuthentication);
+        private void ConsumerReceivedEmailForTwoFactorAuthentication(object sender, BasicDeliverEventArgs basicDeliverEventArgs)
+        {
+            var emailForTwoFactorAuthenticationDto = objectConvertFormatService.ToObjectFromJson<EmailForTwoFactorAuthenticationDto>(Encoding.UTF8.GetString(basicDeliverEventArgs.Body.ToArray()));
+            emailService.SendingEmailForTwoFactorAuthenticationAsync(emailForTwoFactorAuthenticationDto);
+
+            Console.WriteLine($"Two factor authentication - {emailForTwoFactorAuthenticationDto.To} : {emailForTwoFactorAuthenticationDto.VerificationCode} verification code for two factor authentication was sent email to {emailForTwoFactorAuthenticationDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
+            logger.LogInformation($"Two factor authentication - {emailForTwoFactorAuthenticationDto.To} : {emailForTwoFactorAuthenticationDto.VerificationCode} verification code for two factor authentication was sent email to {emailForTwoFactorAuthenticationDto.EmailTo} ! \n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}");
         }
     }
 }

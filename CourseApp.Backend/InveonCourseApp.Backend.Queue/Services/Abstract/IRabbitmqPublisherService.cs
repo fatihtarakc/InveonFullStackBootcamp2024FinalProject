@@ -2,8 +2,8 @@
 {
     public interface IRabbitmqPublisherService
     {
-        Task<IResult> EnqueueModelAsync<T>(T queueDataModel, string queueName) where T : class, new();
+        IResult EnqueueModel<T>(T queueDataModel, string queueName) where T : class, new();
 
-        Task<IResult> EnqueueModelsAsync<T>(IEnumerable<T> queueDataModels, string queueName) where T : class, new();
+        IResult EnqueueModels<T>(IEnumerable<T> queueDataModels, string queueName) where T : class, new();
     }
 }

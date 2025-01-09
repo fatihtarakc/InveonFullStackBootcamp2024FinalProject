@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account_Birthdate_Age_Cannot_Be_LessThan_7YearsOld" xml:space="preserve">
+    <value>7 yaşından daha küçük olamazsınız !</value>
+  </data>
+  <data name="Account_Digits_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Ad için rakam kullanılamaz !</value>
+  </data>
+  <data name="Account_Digits_ForSurname_Cannot_Be_Used" xml:space="preserve">
+    <value>Soyad için rakam kullanılamaz !</value>
+  </data>
+  <data name="Account_Digits_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Kullanıcı adı için rakam kullanılamaz !</value>
+  </data>
+  <data name="Account_Email_Cannot_Be_GreaterThan_50Characters" xml:space="preserve">
+    <value>Email adresi en fazla 50 karakterden oluşmalıdır</value>
+  </data>
+  <data name="Account_Email_Cannot_Be_LessThan_10Characters" xml:space="preserve">
+    <value>Email adresi en az 10 karakterden oluşmalıdır !</value>
+  </data>
   <data name="Account_Email_Has_Already_Existed" xml:space="preserve">
     <value>Bu email adresi kullanılamaz !</value>
   </data>
@@ -127,13 +145,85 @@
     <value>Email adresi doğrulandı !</value>
   </data>
   <data name="Account_Has_Not_Activated" xml:space="preserve">
-    <value>Bu hesap henüz doğrulanmamış !</value>
+    <value>Bu hesap henüz aktive edilmemiş !</value>
+  </data>
+  <data name="Account_Name_Cannot_Be_GreaterThan_25Characters" xml:space="preserve">
+    <value>Adınız en fazla 25 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Name_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Adınız en az 2 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Password_Cannot_Be_GreaterThan_25Characters" xml:space="preserve">
+    <value>Şifre en fazla 25 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Password_Cannot_Be_LessThan_8Characters" xml:space="preserve">
+    <value>Şifre en az 8 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1Digit_AtLeast" xml:space="preserve">
+    <value>Şifre en az bir rakam içermelidir !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1LowerLetter_AtLeast" xml:space="preserve">
+    <value>Şifre en az bir küçük karakter içermelidir !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1Symbol_AtLeast" xml:space="preserve">
+    <value>Şifre en az bir sembol içermelidir !</value>
+  </data>
+  <data name="Account_Password_Must_Include_1UpperLetter_AtLeast" xml:space="preserve">
+    <value>Şifre en az bir büyük karakter içermelidir !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Birthdate" xml:space="preserve">
+    <value>Lütfen doğum tarihinizi giriniz !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Email" xml:space="preserve">
+    <value>Lütfen email adresinizi giriniz !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Name" xml:space="preserve">
+    <value>Lütfen adınızı giriniz !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Password" xml:space="preserve">
+    <value>Lütfen şifrenizi giriniz !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Surname" xml:space="preserve">
+    <value>Lütfen soyadınızı giriniz !</value>
+  </data>
+  <data name="Account_Role_Was_Not_Found_For_IdentityUser" xml:space="preserve">
+    <value>Kullanıcı kimliği için hesap rolü bulunamadı !</value>
   </data>
   <data name="Account_SignIn_Failed" xml:space="preserve">
     <value>Giriş başarısız. Email adresi veya şifre hatalı !</value>
   </data>
   <data name="Account_SignIn_Successful" xml:space="preserve">
     <value>Giriş başarılı !</value>
+  </data>
+  <data name="Account_Surname_Cannot_Be_GreaterThan_25Characters" xml:space="preserve">
+    <value>Soyadınız en fazla 25 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Surname_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Soyadınız en az 2 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Symbols_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Ad için sembol kullanılamaz !</value>
+  </data>
+  <data name="Account_Symbols_ForSurname_Cannot_Be_Used" xml:space="preserve">
+    <value>Soyad için sembol kullanılamaz !</value>
+  </data>
+  <data name="Account_Symbols_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Kullanıcı adı için sembol kullanılamaz !</value>
+  </data>
+  <data name="Account_TurkishCharacters_ForEmail_Cannot_Be_Used" xml:space="preserve">
+    <value>Email adresi için türkçe karakter kullanılamaz !</value>
+  </data>
+  <data name="Account_TurkishCharacters_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Kullanıcı adı için türkçe karakter kullanılamaz !</value>
+  </data>
+  <data name="Account_UpperLetters_ForUsername_Cannot_Be_Used" xml:space="preserve">
+    <value>Kullanıcı adı için büyük harf kullanılamaz !</value>
+  </data>
+  <data name="Account_Username_Cannot_Be_GreaterThan_20Characters" xml:space="preserve">
+    <value>Kullanıcı adınız en fazla 20 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_Username_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value>Kullanıcı adınız en az 5 karakterden oluşmalıdır !</value>
   </data>
   <data name="Account_Username_Has_Already_Existed" xml:space="preserve">
     <value>Bu username kullanılamaz !</value>
@@ -165,40 +255,55 @@
   <data name="Admin_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>IdentityId'ye göre admin bulunamadı !</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
-    <value>Library hesabında email doğrulama kodu</value>
+  <data name="EmailContent_Has_Been_Sent_For_ActivateAccount" xml:space="preserve">
+    <value>Inveon Course App hesabı aktivasyon kodu</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
-    <value>Library'de yeni hesabınız oluşturuldu !</value>
+  <data name="EmailContent_Has_Been_Sent_For_ConfirmEmail" xml:space="preserve">
+    <value>Inveon Course App hesabı email doğrulama kodu</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
-    <value>Library hesabında, şifre değiştirme işlemi doğrulama kodu</value>
+  <data name="EmailContent_Has_Been_Sent_For_NewStudent" xml:space="preserve">
+    <value>Inveon Course App'te yeni öğrenci hesabınız oluşturuldu !</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
-    <value>Library hesabında, iki faktörlü kimlik doğrulama işlemi doğrulama kodu</value>
+  <data name="EmailContent_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
+    <value>Inveon Course App'te yeni eğitmen hesabınız oluşturuldu !</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
-    <value>Library hesabında email doğrulama kodu !</value>
+  <data name="EmailSubject_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+    <value>Inveon Course App hesabı şifre değiştirme işlemi doğrulama kodu</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
-    <value>Yeni Library hesabı !</value>
+  <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
+    <value>Inveon Course App hesabı iki faktörlü kimlik doğrulama işlemi doğrulama kodu</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
-    <value>Library hesap şifre değiştirme işlemi doğrulama kodu !</value>
+  <data name="EmailSubject_Has_Been_Sent_For_ActivateAccount" xml:space="preserve">
+    <value>Inveon Course App hesabı aktivasyon kodu !</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
-    <value>Library hesabı iki faktörlü kimlik doğrulama işlemi !</value>
+  <data name="EmailSubject_Has_Been_Sent_For_ConfirmEmail" xml:space="preserve">
+    <value>Inveon Course App hesabı email doğrulama kodu !</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_EmailVerificationCode" xml:space="preserve">
+  <data name="EmailSubject_Has_Been_Sent_For_NewStudent" xml:space="preserve">
+    <value>Yeni Inveon Course App öğrenci hesabı !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
+    <value>Yeni Inveon Course App eğitmen hesabı !</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
+    <value>Inveon Course App hesabı iki faktörlü kimlik doğrulama işlemi doğrulama kodu !</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_ActivateAccount" xml:space="preserve">
     <value>Merhaba</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_NewAppUser" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_ConfirmEmail" xml:space="preserve">
     <value>Merhaba</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_PasswordChangeVerificationCode" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_NewStudent" xml:space="preserve">
     <value>Merhaba</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthenticationVerificationCode" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
+    <value>Merhaba</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+    <value>Merhaba</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
     <value>Merhaba</value>
   </data>
   <data name="Email_SendingProcess_Was_Failed" xml:space="preserve">
@@ -237,6 +342,12 @@
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Redis önbelleğinde entity bulunamadı !</value>
   </data>
+  <data name="Student_Could_Not_Added" xml:space="preserve">
+    <value>Öğrenci eklenemedi !</value>
+  </data>
+  <data name="Student_Was_Added_Successfully" xml:space="preserve">
+    <value>Öğrenci başarılı bir şekilde eklendi !</value>
+  </data>
   <data name="Student_Was_Found_ByEmail" xml:space="preserve">
     <value>Email'e göre öğrenci bulundu !</value>
   </data>
@@ -255,6 +366,12 @@
   <data name="Student_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>IdentityId'ye göre öğrenci bulunamadı !</value>
   </data>
+  <data name="Token_Could_Not_Generated" xml:space="preserve">
+    <value>Token üretilemedi !</value>
+  </data>
+  <data name="Token_Was_Generated_Successfully" xml:space="preserve">
+    <value>Token başarılı bir şekilde üretildi !</value>
+  </data>
   <data name="Trainer_Was_Found_ByEmail" xml:space="preserve">
     <value>Email'e göre eğitmen bulundu !</value>
   </data>
@@ -272,5 +389,8 @@
   </data>
   <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>IdentityId'ye göre eğitmen bulunamadı !</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+    <value>Inveon Course App hesabı şifre değiştirme işlemi doğrulama kodu</value>
   </data>
 </root>

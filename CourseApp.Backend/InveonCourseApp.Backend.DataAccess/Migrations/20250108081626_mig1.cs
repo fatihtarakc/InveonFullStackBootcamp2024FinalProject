@@ -61,8 +61,8 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(36)", maxLength: 36, nullable: false),
-                    UserName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    NormalizedUserName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    UserName = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
+                    NormalizedUserName = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     NormalizedEmail = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
@@ -79,9 +79,9 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                    table.CheckConstraint("IdentityUser_Email_MinLength_Control", "Len(Email) >= 5");
+                    table.CheckConstraint("IdentityUser_Email_MinLength_Control", "Len(Email) >= 10");
                     table.CheckConstraint("IdentityUser_Id_Length_Control", "Len(Id) = 36");
-                    table.CheckConstraint("IdentityUser_NormalizedEmail_MinLength_Control", "Len(NormalizedEmail) >= 5");
+                    table.CheckConstraint("IdentityUser_NormalizedEmail_MinLength_Control", "Len(NormalizedEmail) >= 10");
                     table.CheckConstraint("IdentityUser_NormalizedUserName_MinLength_Control", "Len(NormalizedUserName) >= 5");
                     table.CheckConstraint("IdentityUser_UserName_MinLength_Control", "Len(UserName) >= 5");
                 });
