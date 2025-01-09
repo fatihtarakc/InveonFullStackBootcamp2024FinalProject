@@ -26,6 +26,8 @@
             {
                 if (await db.Admins.AnyAsync(dbAdmin => dbAdmin.Email == admin.Email)) continue;
 
+                admin.Name = $"{admin.Name.ToUpperInvariant().Substring(0, 1)}{admin.Name.ToLower().Substring(1, admin.Name.Length - 1)}";
+                admin.Surname = $"{admin.Surname.ToUpperInvariant().Substring(0, 1)}{admin.Surname.ToLower().Substring(1, admin.Surname.Length - 1)}";
                 await AddAdminAsync(db, userManager, admin);
             }
 
@@ -46,6 +48,8 @@
             {
                 if (await db.Students.AnyAsync(dbStudent => dbStudent.Email == student.Email)) continue;
 
+                student.Name = $"{student.Name.ToUpperInvariant().Substring(0, 1)}{student.Name.ToLower().Substring(1, student.Name.Length - 1)}";
+                student.Surname = $"{student.Surname.ToUpperInvariant().Substring(0, 1)}{student.Surname.ToLower().Substring(1, student.Surname.Length - 1)}";
                 await AddStudentAsync(db, userManager, student);
             }
 
@@ -59,6 +63,8 @@
             {
                 if (await db.Trainers.AnyAsync(dbTrainer => dbTrainer.Email == trainer.Email)) continue;
 
+                trainer.Name = $"{trainer.Name.ToUpperInvariant().Substring(0, 1)}{trainer.Name.ToLower().Substring(1, trainer.Name.Length - 1)}";
+                trainer.Surname = $"{trainer.Surname.ToUpperInvariant().Substring(0, 1)}{trainer.Surname.ToLower().Substring(1, trainer.Surname.Length - 1)}";
                 await AddTrainerAsync(db, userManager, trainer);
             }
 
@@ -91,6 +97,7 @@
             {
                 if (await db.Categories.AnyAsync(dbCategory => dbCategory.Name == category.Name)) continue;
 
+                category.Name = category.Name.ToUpperInvariant();
                 await AddCategoryAsync(db, category);
             }
 
@@ -112,6 +119,7 @@
             {
                 if (await db.Courses.AnyAsync(dbCourse => dbCourse.Id == course.Id)) continue;
 
+                course.Name = course.Name.ToUpperInvariant();
                 await AddCourseAsync(db, course);
             }
 
@@ -270,7 +278,6 @@
             var identityUser = await db.Users.FirstOrDefaultAsync(identityUser => identityUser.Email == trainer.Email);
             if (identityUser is null) return;
 
-            //await userManager.AddToRoleAsync(identityUser, Role.Trainer.ToString());
             var trainerRoleId = db.Roles.FirstOrDefault(role => role.Name == Role.Trainer.ToString())!.Id;
             await db.UserRoles.AddAsync(new IdentityUserRole<string> { UserId = identityUser.Id, RoleId = trainerRoleId });
 

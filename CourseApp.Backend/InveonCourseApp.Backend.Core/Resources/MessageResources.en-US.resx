@@ -139,7 +139,7 @@
     <value>This email address can not be used !</value>
   </data>
   <data name="Account_Email_Has_Not_Confirmed" xml:space="preserve">
-    <value>This mail address has not confirmed yet !</value>
+    <value>This email address has not confirmed yet !</value>
   </data>
   <data name="Account_Email_Was_Confirmed" xml:space="preserve">
     <value>Email address was confirmed !</value>
@@ -392,5 +392,8 @@
   </data>
   <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
     <value>Inveon Course App account password change process verification code</value>
+  </data>
+  <data name="Account_Email_Is_Invalid" xml:space="preserve">
+    <value>This email address is invalid !</value>
   </data>
 </root>

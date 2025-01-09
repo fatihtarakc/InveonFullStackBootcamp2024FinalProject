@@ -55,8 +55,8 @@
             if (auditableBaseEntity is AuditablePersonBaseEntity)
             {
                 var auditablePersonBaseEntity = (AuditablePersonBaseEntity)auditableBaseEntity;
-                auditablePersonBaseEntity.Name = auditablePersonBaseEntity.Name.ToUpper();
-                auditablePersonBaseEntity.Surname = auditablePersonBaseEntity.Surname.ToUpper();
+                auditablePersonBaseEntity.Name = $"{auditablePersonBaseEntity.Name.ToUpperInvariant().Substring(0, 1)}{auditablePersonBaseEntity.Name.ToLower().Substring(1, auditablePersonBaseEntity.Name.Length - 1)}";
+                auditablePersonBaseEntity.Surname = $"{auditablePersonBaseEntity.Surname.ToUpperInvariant().Substring(0, 1)}{auditablePersonBaseEntity.Surname.ToLower().Substring(1, auditablePersonBaseEntity.Surname.Length - 1)}";
 
                 if (auditablePersonBaseEntity is Admin)
                 {
@@ -80,10 +80,16 @@
             }
             else
             {
-                if (auditableBaseEntity is Category) auditableBaseEntity.CreatedBy = "super admin";
+                if (auditableBaseEntity is Category)
+                {
+                    var category = (Category)auditableBaseEntity;
+                    category.Name = category.Name.ToUpperInvariant();
+                    category.CreatedBy = "super admin";
+                }
                 else if (auditableBaseEntity is Course)
                 {
                     var course = (Course)auditableBaseEntity;
+                    course.Name = course.Name.ToUpperInvariant();
                     course.CreatedBy = course.TrainerId.ToString();
                 }
                 else if (auditableBaseEntity is CourseOrder)
@@ -95,7 +101,6 @@
                 {
                     var order = (Order)auditableBaseEntity;
                     order.CreatedBy = order.StudentId.ToString();
-                    order.ShoppingStatus = ShoppingStatus.Continues;
                 }
                 else if (auditableBaseEntity is Payment)
                 {
@@ -121,14 +126,22 @@
             if (auditableBaseEntity is AuditablePersonBaseEntity)
             {
                 var auditablePersonBaseEntity = (AuditablePersonBaseEntity)auditableBaseEntity;
+                auditablePersonBaseEntity.Name = $"{auditablePersonBaseEntity.Name.ToUpperInvariant().Substring(0, 1)}{auditablePersonBaseEntity.Name.ToLower().Substring(1, auditablePersonBaseEntity.Name.Length - 1)}";
+                auditablePersonBaseEntity.Surname = $"{auditablePersonBaseEntity.Surname.ToUpperInvariant().Substring(0, 1)}{auditablePersonBaseEntity.Surname.ToLower().Substring(1, auditablePersonBaseEntity.Surname.Length - 1)}";
                 auditablePersonBaseEntity.ModifiedBy = $"{auditablePersonBaseEntity.IdentityId}";
             }
             else
             {
-                if (auditableBaseEntity is Category) auditableBaseEntity.ModifiedBy = "super admin";
+                if (auditableBaseEntity is Category)
+                {
+                    var category = (Category)auditableBaseEntity;
+                    category.Name = category.Name.ToUpperInvariant();
+                    auditableBaseEntity.ModifiedBy = "super admin";
+                }
                 else if (auditableBaseEntity is Course)
                 {
                     var course = (Course)auditableBaseEntity;
+                    course.Name = course.Name.ToUpperInvariant();
                     course.ModifiedBy = course.TrainerId.ToString();
                 }
                 else if (auditableBaseEntity is CourseOrder)
@@ -187,7 +200,6 @@
                 {
                     var order = (Order)auditableBaseEntity;
                     order.DeletedBy = order.StudentId.ToString();
-                    order.ShoppingStatus = ShoppingStatus.Cancelled;
                 }
                 else if (auditableBaseEntity is Payment)
                 {

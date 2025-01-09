@@ -393,4 +393,7 @@
   <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
     <value />
   </data>
+  <data name="Account_Email_Is_Invalid" xml:space="preserve">
+    <value />
+  </data>
 </root>

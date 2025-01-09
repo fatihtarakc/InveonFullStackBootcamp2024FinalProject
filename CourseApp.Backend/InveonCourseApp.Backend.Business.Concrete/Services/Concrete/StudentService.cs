@@ -55,6 +55,7 @@
 
                     var student = new Student { IdentityId = Guid.Parse(identityUser.Id) };
                     studentAddDto.Adapt(student);
+
                     await studentRepository.AddAsync(student);
                     await unitOfWork.SaveChangesAsync();
 
@@ -65,9 +66,9 @@
                     };
 
                     rabbitmqPublisherService.EnqueueModel<EmailForNewStudentDto>(emailForNewStudentDto, QueueName.NewStudent);
-                    //await emailService.SendingEmailForNewStudentAsync(emailForNewStudentDto);
 
                     dataResult = new SuccessDataResult<StudentDto>(student.Adapt<StudentDto>(), $"{stringLocalizer[Message.Student_Was_Added_Successfully]}\n{stringLocalizer[Message.Rabbitmq_StartSendingEmailProcess_Was_Successful]}");
+                    transactionScope.Commit();
                 }
                 catch (Exception exception)
                 {

@@ -2,8 +2,7 @@
 {
     public enum ShoppingStatus
     {
-        Cancelled = 1,
-        Completed,
+        Completed = 1,
         Continues
     }
 }

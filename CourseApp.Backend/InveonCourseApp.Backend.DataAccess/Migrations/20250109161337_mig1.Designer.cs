@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InveonCourseApp.Backend.DataAccess.Migrations
 {
     [DbContext(typeof(InveonCourseAppDbContext))]
-    [Migration("20250108081626_mig1")]
+    [Migration("20250109161337_mig1")]
     partial class mig1
     {
         /// <inheritdoc />

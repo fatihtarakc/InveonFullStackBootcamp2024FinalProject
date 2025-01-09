@@ -16,6 +16,8 @@
         public const string Account_Email_Was_Confirmed = "Account_Email_Was_Confirmed";
 
         public const string Account_Email_Has_Already_Existed = "Account_Email_Has_Already_Existed";
+        public const string Account_Email_Is_Invalid = "Account_Email_Is_Invalid";
+
         public const string Account_Username_Has_Already_Existed = "Account_Username_Has_Already_Existed";
 
         public const string Account_Role_Was_Not_Found_For_IdentityUser = "Account_Role_Was_Not_Found_For_IdentityUser";

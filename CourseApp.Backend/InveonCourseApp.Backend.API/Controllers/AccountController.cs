@@ -1,23 +1,19 @@
 ﻿namespace InveonCourseApp.Backend.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountController : CustomControllerBase
     {
         private readonly IAccountService accountService;
         private readonly IAdminService adminService;
         private readonly IStudentService studentService;
         private readonly ITokenService tokenService;
         private readonly ITrainerService trainerService;
-        private readonly IStringLocalizer<MessageResources> stringLocalizer;
-        public AccountController(IAccountService accountService, IAdminService adminService, IStudentService studentService, ITokenService tokenService, ITrainerService trainerService, IStringLocalizer<MessageResources> stringLocalizer)
+        public AccountController(IAccountService accountService, IAdminService adminService, IStudentService studentService, ITokenService tokenService, ITrainerService trainerService, IStringLocalizer<MessageResources> stringLocalizer) : base(stringLocalizer)
         {
             this.accountService = accountService;
             this.adminService = adminService;
             this.studentService = studentService;
             this.tokenService = tokenService;
             this.trainerService = trainerService;
-            this.stringLocalizer = stringLocalizer;
         }
 
         [HttpPost]
@@ -79,7 +75,14 @@
             var tokenDtoDataResult = await tokenService.CreateAccessTokenAsync(identityUser, (AuditablePersonBaseEntityDto)auditablePersonBaseEntityDto);
             if (!tokenDtoDataResult.IsSuccess) return BadRequest(stringLocalizer[Message.Token_Could_Not_Generated]);
 
-            return Ok($"Welcome to InveonCourseApp !\n{tokenDtoDataResult.Message}\nAccess Token : {tokenDtoDataResult.Data!.AccessToken}\nExpiration Date : {tokenDtoDataResult.Data.Expiration}");
+            string rolesArray = "";
+            foreach (var role in roles)
+            {
+                rolesArray += $"{Enum.GetName(typeof(Role), role)}, ";
+            }
+
+            if (!string.IsNullOrWhiteSpace(rolesArray)) rolesArray = rolesArray.Substring(0, rolesArray.Length - 2);
+            return Ok($"Welcome to InveonCourseApp !\nRole : {rolesArray}\n{tokenDtoDataResult.Message}\nAccess Token : {tokenDtoDataResult.Data!.AccessToken}\nExpiration Date : {tokenDtoDataResult.Data.Expiration}");
         }
 
         [HttpPost]
@@ -101,8 +104,10 @@
         }
 
         [HttpGet]
-        public IActionResult Activate(string email)
+        public async Task<IActionResult> Activate(string email)
         {
+            if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
+
             return Ok("hesabınızı active etmek için email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
         }
 
@@ -115,8 +120,10 @@
         }
 
         [HttpGet]
-        public IActionResult ConfirmEmail(string email)
+        public async Task<IActionResult> ConfirmEmail(string email)
         {
+            if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
+
             return Ok("email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
         }
 
@@ -127,8 +134,10 @@
         }
 
         [HttpGet]
-        public IActionResult ChangePassword(string email)
+        public async Task<IActionResult> ChangePassword(string email)
         {
+            if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
+
             return Ok("şifre değiştirme işlemi için email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
         }
 
@@ -139,8 +148,10 @@
         }
 
         [HttpGet]
-        public IActionResult ForgotPassword(string email)
+        public async Task<IActionResult> ForgotPassword(string email)
         {
+            if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
+
             return Ok("şifre yenileme işlemi için email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
         }
 
