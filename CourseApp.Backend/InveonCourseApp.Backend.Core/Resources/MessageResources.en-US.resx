@@ -337,7 +337,7 @@
     <value>Entity was not found in Redis cache !</value>
   </data>
   <data name="Student_Could_Not_Added" xml:space="preserve">
-    <value>Student could not added !</value>
+    <value>Student could not be added !</value>
   </data>
   <data name="Student_Was_Added_Successfully" xml:space="preserve">
     <value>Student was added successfully !</value>
@@ -443,5 +443,164 @@
   </data>
   <data name="Please_Activate_Your_Account_Again" xml:space="preserve">
     <value>Please activate your account again !</value>
+  </data>
+  <data name="Admin_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value>Admin was not found by username !</value>
+  </data>
+  <data name="Admin_Was_Found_ByUsername" xml:space="preserve">
+    <value>Admin was found by username !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value>Student was not found by username !</value>
+  </data>
+  <data name="Student_Was_Found_ByUsername" xml:space="preserve">
+    <value>Student was found by username !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value>Trainer was not found by username !</value>
+  </data>
+  <data name="Trainer_Was_Found_ByUsername" xml:space="preserve">
+    <value>Trainer was found by username !</value>
+  </data>
+  <data name="Student_Can_Not_Be_Trainer" xml:space="preserve">
+    <value>You cannot be a trainer because of younger than 18 years old !</value>
+  </data>
+  <data name="Student_Can_Be_Trainer" xml:space="preserve">
+    <value>You are suitable to be trainer !</value>
+  </data>
+  <data name="Trainer_Could_Not_Added" xml:space="preserve">
+    <value>Trainer could not be added !</value>
+  </data>
+  <data name="Trainer_Was_Added_Successfully" xml:space="preserve">
+    <value>Trainer was added successfully !</value>
+  </data>
+  <data name="Student_Trainer_Role_Could_Not_Be_Added" xml:space="preserve">
+    <value>Trainer role could not be added for student !</value>
+  </data>
+  <data name="Student_Trainer_Role_Was_Added_Successfully" xml:space="preserve">
+    <value>Trainer role was added successfully for student !</value>
+  </data>
+  <data name="Trainer_Has_Already_Been_Existed" xml:space="preserve">
+    <value>Trainer has already been existed !</value>
+  </data>
+  <data name="Category_AllCategories_Were_Got_Successfully" xml:space="preserve">
+    <value>All categories were got successfully !</value>
+  </data>
+  <data name="Category_AllCategories_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>All categories getting process was failed !</value>
+  </data>
+  <data name="Category_List_Has_Been_Empty" xml:space="preserve">
+    <value>Category list has been empty !</value>
+  </data>
+  <data name="Category_Was_Got_Successfully" xml:space="preserve">
+    <value>Category was got successfully !</value>
+  </data>
+  <data name="Category_Could_Not_Be_Got" xml:space="preserve">
+    <value>Category could not be got !</value>
+  </data>
+  <data name="Course_List_Has_Been_Empty" xml:space="preserve">
+    <value>Course list has been empty !</value>
+  </data>
+  <data name="Course_AllCourses_Were_Got_Successfully" xml:space="preserve">
+    <value>All courses were got successfully !</value>
+  </data>
+  <data name="Course_AllCourses_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>All courses getting process was failed !</value>
+  </data>
+  <data name="Course_WantedCourses_Were_Got_Successfully" xml:space="preserve">
+    <value>Wanted courses were got successfully !</value>
+  </data>
+  <data name="Course_WantedCourses_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>Wanted courses getting process was failed !</value>
+  </data>
+  <data name="Course_Was_Got_Successfully" xml:space="preserve">
+    <value>Course was got successfully !</value>
+  </data>
+  <data name="Course_Could_Not_Be_Got" xml:space="preserve">
+    <value>Course could not be got !</value>
+  </data>
+  <data name="Course_Please_Enter_Name" xml:space="preserve">
+    <value>Please enter course name !</value>
+  </data>
+  <data name="Course_Digits_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Digits cannot be used for course name !</value>
+  </data>
+  <data name="Course_Symbols_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Symbols cannot be used for course name !</value>
+  </data>
+  <data name="Course_Name_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Course name length cannot be less than 2 characters !</value>
+  </data>
+  <data name="Course_Name_Cannot_Be_GreaterThan_100Characters" xml:space="preserve">
+    <value>Course name length cannot be greater than 25 characters !</value>
+  </data>
+  <data name="Course_Please_Enter_ImageUrl" xml:space="preserve">
+    <value>Please enter course image url !</value>
+  </data>
+  <data name="Course_ImageUrl_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value>Course image url length cannot be less than 5 characters !</value>
+  </data>
+  <data name="Course_ImageUrl_Cannot_Be_GreaterThan_250Characters" xml:space="preserve">
+    <value>Course image url length cannot be greater than 250 characters !</value>
+  </data>
+  <data name="Course_Please_Enter_Description" xml:space="preserve">
+    <value>Please enter course description !</value>
+  </data>
+  <data name="Course_Digits_ForDescription_Cannot_Be_Used" xml:space="preserve">
+    <value>Digits cannot be used for course description !</value>
+  </data>
+  <data name="Course_Symbols_ForDescription_Cannot_Be_Used" xml:space="preserve">
+    <value>Symbols cannot be used for course description !</value>
+  </data>
+  <data name="Course_Description_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value>Course description length cannot be less than 5 characters !</value>
+  </data>
+  <data name="Course_Description_Cannot_Be_GreaterThan_450Characters" xml:space="preserve">
+    <value>Course description length cannot be greater than 450 characters !</value>
+  </data>
+  <data name="Course_Please_Enter_Price" xml:space="preserve">
+    <value>Please enter course price !</value>
+  </data>
+  <data name="Course_Please_Enter_Currency" xml:space="preserve">
+    <value>Please enter course currency !</value>
+  </data>
+  <data name="Course_Price_Must_Be_Min_0" xml:space="preserve">
+    <value>Course price must be greater than or equal to 0 !</value>
+  </data>
+  <data name="Course_Please_Enter_CategoryId" xml:space="preserve">
+    <value>Please enter course categoryId !</value>
+  </data>
+  <data name="Course_Please_Enter_TrainerId" xml:space="preserve">
+    <value>Please enter course trainer Id !</value>
+  </data>
+  <data name="Category_Was_Not_Found_ById" xml:space="preserve">
+    <value>Category was not found by Id !</value>
+  </data>
+  <data name="Course_Could_Not_Added" xml:space="preserve">
+    <value>Course could not added !</value>
+  </data>
+  <data name="Order_List_Has_Been_Empty" xml:space="preserve">
+    <value>Order list has been empty !</value>
+  </data>
+  <data name="Order_WantedOrders_Were_Got_Successfully" xml:space="preserve">
+    <value>Wanted orders were got successfully !</value>
+  </data>
+  <data name="Order_WantedOrder_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>Wanted orders getting process was failed !</value>
+  </data>
+  <data name="Payment_List_Has_Been_Empty" xml:space="preserve">
+    <value>Payment list has been empty !</value>
+  </data>
+  <data name="Payment_WantedPayments_Were_Got_Successfully" xml:space="preserve">
+    <value>Wanted payments were got successfully !</value>
+  </data>
+  <data name="Payment_WantedPayments_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>Wanted paments getting process was failed !</value>
+  </data>
+  <data name="Payment_Could_Not_Be_Got" xml:space="preserve">
+    <value>Payment could not be got !</value>
+  </data>
+  <data name="Payment_Was_Got_Successfully" xml:space="preserve">
+    <value>Payment was got successfully !</value>
   </data>
 </root>

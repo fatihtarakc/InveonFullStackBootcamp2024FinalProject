@@ -244,7 +244,7 @@
     <value>Id'ye göre admin bulundu !</value>
   </data>
   <data name="Admin_Was_Found_ByIdentityId" xml:space="preserve">
-    <value>IdentityId'ye göre admin bulunamadı !</value>
+    <value>IdentityId'ye göre admin bulundu !</value>
   </data>
   <data name="Admin_Was_Not_Found_ByEmail" xml:space="preserve">
     <value>Email'e göre admin bulunamadı !</value>
@@ -349,7 +349,7 @@
     <value>Id'ye göre öğrenci bulundu !</value>
   </data>
   <data name="Student_Was_Found_ByIdentityId" xml:space="preserve">
-    <value>IdentityId'ye göre student bulunamadı !</value>
+    <value>IdentityId'ye göre student bulundu !</value>
   </data>
   <data name="Student_Was_Not_Found_ByEmail" xml:space="preserve">
     <value>Email'e göre öğrenci bulunamadı !</value>
@@ -373,13 +373,13 @@
     <value>Id'ye göre eğitmen bulundu !</value>
   </data>
   <data name="Trainer_Was_Found_ByIdentityId" xml:space="preserve">
-    <value>IdentityId'ye göre eğitmen bulunamadı !</value>
+    <value>IdentityId'ye göre eğitmen bulundu !</value>
   </data>
   <data name="Trainer_Was_Not_Found_ByEmail" xml:space="preserve">
     <value>Email'e göre eğitmen bulunamadı !</value>
   </data>
   <data name="Trainer_Was_Not_Found_ById" xml:space="preserve">
-    <value>IdentityId'ye göre öğrenci bulunamadı !</value>
+    <value>Id'ye göre öğrenci bulunamadı !</value>
   </data>
   <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>IdentityId'ye göre eğitmen bulunamadı !</value>
@@ -443,5 +443,164 @@
   </data>
   <data name="Please_Activate_Your_Account_Again" xml:space="preserve">
     <value>Lütfen hesabınızı tekrar etkinleştirin !</value>
+  </data>
+  <data name="Admin_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value>Username'e göre admin bulunamadı !</value>
+  </data>
+  <data name="Admin_Was_Found_ByUsername" xml:space="preserve">
+    <value>Username'e göre admin bulundu !</value>
+  </data>
+  <data name="Student_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value>Username'e göre öğrenci bulunamadı !</value>
+  </data>
+  <data name="Student_Was_Found_ByUsername" xml:space="preserve">
+    <value>Username'e göre student bulundu !</value>
+  </data>
+  <data name="Trainer_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value>Username'e göre eğitmen bulunamadı !</value>
+  </data>
+  <data name="Trainer_Was_Found_ByUsername" xml:space="preserve">
+    <value>Username'e göre eğitmen bulundu !</value>
+  </data>
+  <data name="Student_Can_Not_Be_Trainer" xml:space="preserve">
+    <value>18 yaşından küçük olmanız nedeniyle eğitmen olamazsınız !</value>
+  </data>
+  <data name="Student_Can_Be_Trainer" xml:space="preserve">
+    <value>Eğitmen olmak için uygunsunuz !</value>
+  </data>
+  <data name="Trainer_Could_Not_Added" xml:space="preserve">
+    <value>Eğitmen eklenemedi !</value>
+  </data>
+  <data name="Trainer_Was_Added_Successfully" xml:space="preserve">
+    <value>Eğitmen başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="Student_Trainer_Role_Could_Not_Be_Added" xml:space="preserve">
+    <value>Öğrenci için eğitmen rolü eklenemedi !</value>
+  </data>
+  <data name="Student_Trainer_Role_Was_Added_Successfully" xml:space="preserve">
+    <value>Öğrenci için eğitmen rolü başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="Trainer_Has_Already_Been_Existed" xml:space="preserve">
+    <value>Eğitmen zaten sistemde bulunmakta !</value>
+  </data>
+  <data name="Category_AllCategories_Were_Got_Successfully" xml:space="preserve">
+    <value>Tüm kategoriler başarılı bir şekilde getirildi !</value>
+  </data>
+  <data name="Category_AllCategories_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>Tüm kategorileri getirme işlemi başarısız !</value>
+  </data>
+  <data name="Category_List_Has_Been_Empty" xml:space="preserve">
+    <value>Categori listesi boş !</value>
+  </data>
+  <data name="Category_Was_Got_Successfully" xml:space="preserve">
+    <value>Kategori başarılı bir şekilde getirildi !</value>
+  </data>
+  <data name="Category_Could_Not_Be_Got" xml:space="preserve">
+    <value>Kategori getirilemedi !</value>
+  </data>
+  <data name="Course_List_Has_Been_Empty" xml:space="preserve">
+    <value>Kurs listesi boş !</value>
+  </data>
+  <data name="Course_AllCourses_Were_Got_Successfully" xml:space="preserve">
+    <value>Tüm kursları getirme işlemi başarılı !</value>
+  </data>
+  <data name="Course_AllCourses_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>Tüm kursları getirme işlemi başarısız !</value>
+  </data>
+  <data name="Course_WantedCourses_Were_Got_Successfully" xml:space="preserve">
+    <value>İstenen kursları getirme işlemi başarılı !</value>
+  </data>
+  <data name="Course_WantedCourses_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>İstenen kursları getirme işlemi başarısız !</value>
+  </data>
+  <data name="Course_Was_Got_Successfully" xml:space="preserve">
+    <value>Kurs başarılı bir şekilde getirildi !</value>
+  </data>
+  <data name="Course_Could_Not_Be_Got" xml:space="preserve">
+    <value>Kurs getirilemedi !</value>
+  </data>
+  <data name="Course_Please_Enter_Name" xml:space="preserve">
+    <value>Lütfen kurs adını giriniz !</value>
+  </data>
+  <data name="Course_Digits_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Kurs adı için rakam kullanılamaz !</value>
+  </data>
+  <data name="Course_Symbols_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Kurs adı için sembol kullanılamaz !</value>
+  </data>
+  <data name="Course_Name_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Kurs adı en az 2 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Course_Name_Cannot_Be_GreaterThan_100Characters" xml:space="preserve">
+    <value>Kurs adı en fazla 25 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Course_Please_Enter_ImageUrl" xml:space="preserve">
+    <value>Lütfen resim url'sini adını giriniz !</value>
+  </data>
+  <data name="Course_ImageUrl_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value>Kurs resim url'si en az 5 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Course_ImageUrl_Cannot_Be_GreaterThan_250Characters" xml:space="preserve">
+    <value>Kurs image url'si en fazla 250 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Course_Please_Enter_Description" xml:space="preserve">
+    <value>Lütfen kurs tanımını giriniz !</value>
+  </data>
+  <data name="Course_Digits_ForDescription_Cannot_Be_Used" xml:space="preserve">
+    <value>Kurs tanımı için rakam kullanılamaz !</value>
+  </data>
+  <data name="Course_Symbols_ForDescription_Cannot_Be_Used" xml:space="preserve">
+    <value>Kurs tanımı için sembol kullanılamaz !</value>
+  </data>
+  <data name="Course_Description_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value>Kurs tanımı en az 5 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Course_Description_Cannot_Be_GreaterThan_450Characters" xml:space="preserve">
+    <value>Kurs tanımı en fazla 450 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Course_Please_Enter_Price" xml:space="preserve">
+    <value>Lütfen kurs ücretini giriniz !</value>
+  </data>
+  <data name="Course_Please_Enter_Currency" xml:space="preserve">
+    <value>Lütfen kurs döviz birimini giriniz !</value>
+  </data>
+  <data name="Course_Price_Must_Be_Min_0" xml:space="preserve">
+    <value>Kurs ücreti minimum 0 olmalıdır !</value>
+  </data>
+  <data name="Course_Please_Enter_CategoryId" xml:space="preserve">
+    <value>Lütfen kurs kategori id'sini giriniz !</value>
+  </data>
+  <data name="Course_Please_Enter_TrainerId" xml:space="preserve">
+    <value>Lütfen kurs eğitmen id'sini giriniz !</value>
+  </data>
+  <data name="Category_Was_Not_Found_ById" xml:space="preserve">
+    <value>Id'ye göre kategori bulunamadı !</value>
+  </data>
+  <data name="Course_Could_Not_Added" xml:space="preserve">
+    <value>Kurs eklenemedi !</value>
+  </data>
+  <data name="Order_List_Has_Been_Empty" xml:space="preserve">
+    <value>Sipariş listesi boş !</value>
+  </data>
+  <data name="Order_WantedOrders_Were_Got_Successfully" xml:space="preserve">
+    <value>İstenilen siparişleri getirme işlemi başarılı !</value>
+  </data>
+  <data name="Order_WantedOrder_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>İstenilen siparişleri getirme işlemi başarısız !</value>
+  </data>
+  <data name="Payment_List_Has_Been_Empty" xml:space="preserve">
+    <value>Ödeme listesi boş !</value>
+  </data>
+  <data name="Payment_WantedPayments_Were_Got_Successfully" xml:space="preserve">
+    <value>İstenilen ödemeleri getirme işlemi başarılı !</value>
+  </data>
+  <data name="Payment_WantedPayments_Getting_Process_Was_Failed" xml:space="preserve">
+    <value>İstenilen ödemeleri getirme işlemi başarısız !</value>
+  </data>
+  <data name="Payment_Could_Not_Be_Got" xml:space="preserve">
+    <value>Payment getirilemedi !</value>
+  </data>
+  <data name="Payment_Was_Got_Successfully" xml:space="preserve">
+    <value>Ödeme başarılı bir şekilde getirildi !</value>
   </data>
 </root>

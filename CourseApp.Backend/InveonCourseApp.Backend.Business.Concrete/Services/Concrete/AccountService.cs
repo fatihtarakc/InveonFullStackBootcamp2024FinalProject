@@ -150,6 +150,9 @@
             return result;
         }
 
+        public async Task<IdentityResult> AddToRoleAsync(IdentityUser identityUser, Role role) =>
+            await userManager.AddToRoleAsync(identityUser, role.ToString());
+
         public async Task<bool> AnyAsync(Expression<Func<IdentityUser, bool>> expression) =>
             await userManager.Users.AnyAsync(expression);
 

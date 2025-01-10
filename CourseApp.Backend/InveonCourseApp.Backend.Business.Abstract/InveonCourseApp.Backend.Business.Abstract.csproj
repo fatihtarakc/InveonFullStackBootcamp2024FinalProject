@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InveonCourseApp.Backend.Core\InveonCourseApp.Backend.Core.csproj" />
     <ProjectReference Include="..\InveonCourseApp.Backend.Dtos\InveonCourseApp.Backend.Dtos.csproj" />
+    <ProjectReference Include="..\InveonCourseApp.Backend.Entities\InveonCourseApp.Backend.Entities.csproj" />
   </ItemGroup>
 
 </Project>

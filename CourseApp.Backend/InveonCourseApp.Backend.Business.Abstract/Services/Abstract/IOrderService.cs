@@ -2,5 +2,6 @@
 {
     public interface IOrderService
     {
+        Task<IDataResult<List<OrderDto>>> GetAllWhereAsync(Expression<Func<Order, bool>> expression);
     }
 }

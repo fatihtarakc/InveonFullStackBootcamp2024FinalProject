@@ -50,10 +50,10 @@
         #endregion
 
         #region IAsyncOrderableRepository<Entity>
-        public async Task<IEnumerable<Entity>> GetAllWhereAsync<TKey>(Expression<Func<Entity, TKey>> orderby, bool orderDesc = false, bool tracking = true) =>
+        public async Task<IEnumerable<Entity>> GetAllWhereOrderByAsync<TKey>(Expression<Func<Entity, TKey>> orderby, bool orderDesc = false, bool tracking = true) =>
             orderDesc ? await GetAllByStatusIsNotDeletedByTracking(tracking).OrderByDescending(orderby).ToListAsync() : await GetAllByStatusIsNotDeletedByTracking(tracking).OrderBy(orderby).ToListAsync();
 
-        public async Task<IEnumerable<Entity>> GetAllWhereAsync<TKey>(Expression<Func<Entity, bool>> expression, Expression<Func<Entity, TKey>> orderby, bool orderDesc = false, bool tracking = true) =>
+        public async Task<IEnumerable<Entity>> GetAllWhereOrderByAsync<TKey>(Expression<Func<Entity, bool>> expression, Expression<Func<Entity, TKey>> orderby, bool orderDesc = false, bool tracking = true) =>
             orderDesc ? await GetAllByStatusIsNotDeletedByTracking(tracking).Where(expression).OrderByDescending(orderby).ToListAsync() : await GetAllByStatusIsNotDeletedByTracking(tracking).Where(expression).OrderBy(orderby).ToListAsync();
         #endregion
     }

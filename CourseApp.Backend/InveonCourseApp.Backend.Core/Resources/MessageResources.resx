@@ -444,4 +444,163 @@
   <data name="Please_Activate_Your_Account_Again" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Admin_Was_Found_ByUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Was_Found_ByUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Not_Found_ByUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Found_ByUsername" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Can_Not_Be_Trainer" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Can_Be_Trainer" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Could_Not_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Was_Added_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Trainer_Role_Could_Not_Be_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Student_Trainer_Role_Was_Added_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Trainer_Has_Already_Been_Existed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Category_AllCategories_Were_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Category_AllCategories_Getting_Process_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Category_List_Has_Been_Empty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Category_Was_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Category_Could_Not_Be_Got" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_List_Has_Been_Empty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_AllCourses_Were_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_AllCourses_Getting_Process_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_WantedCourses_Were_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_WantedCourses_Getting_Process_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Was_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Could_Not_Be_Got" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Digits_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Symbols_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Name_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Name_Cannot_Be_GreaterThan_100Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_ImageUrl_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_ImageUrl_Cannot_Be_GreaterThan_250Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Digits_ForDescription_Cannot_Be_Used" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Symbols_ForDescription_Cannot_Be_Used" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Description_Cannot_Be_LessThan_5Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Description_Cannot_Be_GreaterThan_450Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_Price" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_Currency" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Price_Must_Be_Min_0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_CategoryId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Please_Enter_TrainerId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Category_Was_Not_Found_ById" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Course_Could_Not_Added" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Order_List_Has_Been_Empty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Order_WantedOrders_Were_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Order_WantedOrder_Getting_Process_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_List_Has_Been_Empty" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_WantedPayments_Were_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_WantedPayments_Getting_Process_Was_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_Could_Not_Be_Got" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_Was_Got_Successfully" xml:space="preserve">
+    <value />
+  </data>
 </root>

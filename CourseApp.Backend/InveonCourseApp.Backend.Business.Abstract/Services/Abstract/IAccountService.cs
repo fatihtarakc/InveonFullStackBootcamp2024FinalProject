@@ -4,6 +4,8 @@
     {
         Task<IResult> ActivateAsync(IdentityUserActivateAccountDto identityUserActivateAccountDto);
 
+        Task<IdentityResult> AddToRoleAsync(IdentityUser identityUser, Role role);
+
         Task<bool> AnyAsync(Expression<Func<IdentityUser, bool>> expression);
 
         Task<IResult> ConfirmEmailAsync(IdentityUserConfirmEmailDto identityUserConfirmEmailDto);

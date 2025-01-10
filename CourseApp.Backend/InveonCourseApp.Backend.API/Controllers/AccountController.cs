@@ -91,7 +91,7 @@
             if (!ModelState.IsValid) return BadRequest();
 
             var studentDtoDataResult = await studentService.AddAsync(studentAddDto);
-            if (!studentDtoDataResult.IsSuccess) return BadRequest(stringLocalizer[Message.Student_Could_Not_Added]);
+            if (!studentDtoDataResult.IsSuccess) return BadRequest(studentDtoDataResult.Message);
 
             return Ok($"{studentDtoDataResult.Message}\nWelcome to Inveon Course App {studentDtoDataResult.Data!.Name} {studentDtoDataResult.Data!.Surname} !\n{stringLocalizer[Message.Account_Email_Has_Not_Confirmed]}\n{stringLocalizer[Message.Account_Has_Not_Activated]}");
         }
