@@ -14,8 +14,7 @@
             rabbitmqConsumerService.StartSendingEmailForNewTrainer();
             rabbitmqConsumerService.StartSendingEmailForActivateAccount();
             rabbitmqConsumerService.StartSendingEmailForConfirmEmail();
-            rabbitmqConsumerService.StartSendingEmailForChangePassword();
-            rabbitmqConsumerService.StartSendingEmailForTwoFactorAuthentication();
+            rabbitmqConsumerService.StartSendingEmailForResetPassword();
         }
     }
 }

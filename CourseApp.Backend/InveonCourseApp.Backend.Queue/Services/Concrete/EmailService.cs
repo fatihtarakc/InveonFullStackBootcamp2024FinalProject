@@ -50,46 +50,38 @@
             }
         }
 
-        public async Task<IResult> SendingEmailForNewStudentAsync(EmailForNewStudentDto emailForNewStudentDto)
+        public async Task<IResult> SendingEmailForNewStudentAsync(EmailForNewUserDto emailForNewUserDto)
         {
-            var result = await SendAsync(new EmailDto(emailForNewStudentDto.To, emailForNewStudentDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_NewStudent]} {emailForNewStudentDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_NewStudent], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_NewStudent]}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
+            var result = await SendAsync(new EmailDto(emailForNewUserDto.To, emailForNewUserDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_NewStudent]} {emailForNewUserDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_NewStudent], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_NewStudent]}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
             if (result.IsSuccess) return new SuccessResult(result.Message);
             return new ErrorResult(result.Message);
         }
 
-        public async Task<IResult> SendingEmailForNewTrainerAsync(EmailForNewTrainerDto emailForNewTrainerDto)
+        public async Task<IResult> SendingEmailForNewTrainerAsync(EmailForNewUserDto emailForNewUserDto)
         {
-            var result = await SendAsync(new EmailDto(emailForNewTrainerDto.To, emailForNewTrainerDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_NewTrainer]} {emailForNewTrainerDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_NewTrainer], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_NewTrainer]}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
+            var result = await SendAsync(new EmailDto(emailForNewUserDto.To, emailForNewUserDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_NewTrainer]} {emailForNewUserDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_NewTrainer], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_NewTrainer]}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
             if (result.IsSuccess) return new SuccessResult(result.Message);
             return new ErrorResult(result.Message);
         }
 
-        public async Task<IResult> SendingEmailForActivateAccountAsync(EmailForActivateAccountDto emailForActivateAccountDto)
+        public async Task<IResult> SendingEmailForActivateAccountAsync(EmailForVerificationDto emailForVerificationDto)
         {
-            var result = await SendAsync(new EmailDto(emailForActivateAccountDto.To, emailForActivateAccountDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_ActivateAccount]} {emailForActivateAccountDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_ActivateAccount], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_ActivateAccount]}: {emailForActivateAccountDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
+            var result = await SendAsync(new EmailDto(emailForVerificationDto.To, emailForVerificationDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_ActivateAccount]} {emailForVerificationDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_ActivateAccount], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_ActivateAccount]}: {emailForVerificationDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
             if (result.IsSuccess) return new SuccessResult(result.Message);
             return new ErrorResult(result.Message);
         }
 
-        public async Task<IResult> SendingEmailForConfirmEmailAsync(EmailForConfirmEmailDto emailForConfirmEmailDto)
+        public async Task<IResult> SendingEmailForConfirmEmailAsync(EmailForVerificationDto emailForVerificationDto)
         {
-            var result = await SendAsync(new EmailDto(emailForConfirmEmailDto.To, emailForConfirmEmailDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_ConfirmEmail]} {emailForConfirmEmailDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_ConfirmEmail], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_ConfirmEmail]}: {emailForConfirmEmailDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
+            var result = await SendAsync(new EmailDto(emailForVerificationDto.To, emailForVerificationDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_ConfirmEmail]} {emailForVerificationDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_ConfirmEmail], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_ConfirmEmail]}: {emailForVerificationDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
             if (result.IsSuccess) return new SuccessResult(result.Message);
             return new ErrorResult(result.Message);
         }
 
-        public async Task<IResult> SendingEmailForChangePasswordAsync(EmailForChangePasswordDto emailForChangePasswordDto)
+        public async Task<IResult> SendingEmailForResetPasswordAsync(EmailForVerificationDto emailForVerificationDto)
         {
-            var result = await SendAsync(new EmailDto(emailForChangePasswordDto.To, emailForChangePasswordDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_ChangePassword]} {emailForChangePasswordDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_ChangePassword], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_ChangePassword]}: {emailForChangePasswordDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
+            var result = await SendAsync(new EmailDto(emailForVerificationDto.To, emailForVerificationDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_ResetPassword]} {emailForVerificationDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_ResetPassword], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_ResetPassword]}: {emailForVerificationDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
             if (result.IsSuccess) return new SuccessResult(result.Message);
-            return new ErrorResult(result.Message);
-        }
-
-        public async Task<IResult> SendingEmailForTwoFactorAuthenticationAsync(EmailForTwoFactorAuthenticationDto emailForTwoFactorAuthenticationDto)
-        {
-            var result = await SendAsync(new EmailDto(emailForTwoFactorAuthenticationDto.To, emailForTwoFactorAuthenticationDto.EmailTo, $"{stringLocalizer[Message.EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication]} {emailForTwoFactorAuthenticationDto.To},", stringLocalizer[Message.EmailSubject_Has_Been_Sent_For_TwoFactorAuthentication], $"{stringLocalizer[Message.EmailContent_Has_Been_Sent_For_TwoFactorAuthentication]}: {emailForTwoFactorAuthenticationDto.VerificationCode}\n{DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}"));
-            if (result.IsSuccess) return new SuccessResult(result.Message);
-
             return new ErrorResult(result.Message);
         }
     }

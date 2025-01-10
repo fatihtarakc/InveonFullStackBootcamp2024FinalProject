@@ -6,12 +6,24 @@
         public const string Account_SignIn_Failed = "Account_SignIn_Failed";
         public const string Account_SignIn_Successful = "Account_SignIn_Successful";
 
+        public const string Account_ActivateAccount_Failed = "Account_ActivateAccount_Failed";
+        public const string Account_ActivateAccount_Successful = "Account_ActivateAccount_Successful";
+
+        public const string Account_ConfirmEmail_Failed = "Account_ConfirmEmail_Failed";
+        public const string Account_ConfirmEmail_Successful = "Account_ConfirmEmail_Successful";
+
+        public const string Account_ResetPassword_Failed = "Account_ResetPassword_Failed";
+        public const string Account_ResetPassword_Successful = "Account_ResetPassword_Successful";
+
         public const string Account_Was_Not_Found = "Account_Was_Not_Found";
         public const string Account_Was_Found = "Account_Was_Found";
 
+        public const string Please_Activate_Your_Account_Again = "Please_Activate_Your_Account_Again";
+        public const string Account_Has_Already_Been_Activated = "Account_Has_Already_Been_Activated";
         public const string Account_Has_Not_Activated = "Account_Has_Not_Activated";
         public const string Account_Was_Activated = "Account_Was_Activated";
 
+        public const string Account_Email_Has_Already_Been_Confirmed = "Account_Email_Has_Already_Been_Confirmed";
         public const string Account_Email_Has_Not_Confirmed = "Account_Email_Has_Not_Confirmed";
         public const string Account_Email_Was_Confirmed = "Account_Email_Was_Confirmed";
 
@@ -58,6 +70,14 @@
 
         public const string Account_Please_Enter_Your_Birthdate = "Account_Please_Enter_Your_Birthdate";
         public const string Account_Birthdate_Age_Cannot_Be_LessThan_7YearsOld = "Account_Birthdate_Age_Cannot_Be_LessThan_7YearsOld";
+        
+        public const string Account_Please_Take_New_VerificationCode = "Account_Please_Take_New_VerificationCode";
+        public const string Account_Please_Enter_Your_VerificationCode = "Account_Please_Enter_Your_VerificationCode";
+        public const string Account_VerificationCode_Is_Invalid = "Account_VerificationCode_Is_Invalid";
+        public const string Account_VerificationCode_Cannot_Be_GreaterThan_50Characters = "Account_VerificationCode_Cannot_Be_GreaterThan_50Characters";
+        
+        public const string Account_Please_Select_Your_VerificationType = "Account_Please_Select_Your_VerificationType";
+        public const string Account_Please_Select_Correct_VerificationType = "Account_Please_Select_Correct_VerificationType";
 
         #endregion
 
@@ -122,9 +142,9 @@
         public const string EmailSubject_Has_Been_Sent_For_ConfirmEmail = "EmailSubject_Has_Been_Sent_For_ConfirmEmail";
         public const string EmailContent_Has_Been_Sent_For_ConfirmEmail = "EmailContent_Has_Been_Sent_For_ConfirmEmail";
 
-        public const string EmailTitle_Has_Been_Sent_For_ChangePassword = "EmailTitle_Has_Been_Sent_For_ChangePassword";
-        public const string EmailSubject_Has_Been_Sent_For_ChangePassword = "EmailSubject_Has_Been_Sent_For_ChangePassword";
-        public const string EmailContent_Has_Been_Sent_For_ChangePassword = "EmailContent_Has_Been_Sent_For_ChangePassword";
+        public const string EmailTitle_Has_Been_Sent_For_ResetPassword = "EmailTitle_Has_Been_Sent_For_ResetPassword";
+        public const string EmailSubject_Has_Been_Sent_For_ResetPassword = "EmailSubject_Has_Been_Sent_For_ResetPassword";
+        public const string EmailContent_Has_Been_Sent_For_ResetPassword = "EmailContent_Has_Been_Sent_For_ResetPassword";
 
         public const string EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication = "EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication";
         public const string EmailSubject_Has_Been_Sent_For_TwoFactorAuthentication = "EmailSubject_Has_Been_Sent_For_TwoFactorAuthentication";

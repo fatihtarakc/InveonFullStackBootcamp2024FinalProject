@@ -10,8 +10,6 @@
 
         void StartSendingEmailForConfirmEmail();
 
-        void StartSendingEmailForChangePassword();
-
-        void StartSendingEmailForTwoFactorAuthentication();
+        void StartSendingEmailForResetPassword();
     }
 }

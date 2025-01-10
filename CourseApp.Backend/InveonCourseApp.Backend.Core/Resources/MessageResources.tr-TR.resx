@@ -267,9 +267,6 @@
   <data name="EmailContent_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
     <value>Inveon Course App'te yeni eğitmen hesabınız oluşturuldu !</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
-    <value>Inveon Course App hesabı şifre değiştirme işlemi doğrulama kodu</value>
-  </data>
   <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
     <value>Inveon Course App hesabı iki faktörlü kimlik doğrulama işlemi doğrulama kodu</value>
   </data>
@@ -300,9 +297,6 @@
   <data name="EmailTitle_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
     <value>Merhaba</value>
   </data>
-  <data name="EmailTitle_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
-    <value>Merhaba</value>
-  </data>
   <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
     <value>Merhaba</value>
   </data>
@@ -316,7 +310,7 @@
     <value>Rabbitmq ile modeli kuyruğa alma işlemi başarısız !</value>
   </data>
   <data name="Rabbitmq_EnqueueModelProcess_Was_Successful" xml:space="preserve">
-    <value>Rabbitmq ile email göndermeye başlama işlemi başarılı !</value>
+    <value>Rabbitmq ile modeli kuyruğa alma işlemi başarılı !</value>
   </data>
   <data name="Rabbitmq_EnqueueModelsProcess_Were_Failed" xml:space="preserve">
     <value>Rabbitmq ile modelleri kuyruğa alma işlemi başarısız !</value>
@@ -325,10 +319,10 @@
     <value>Rabbitmq ile modelleri kuyruğa alma işlemi başarılı !</value>
   </data>
   <data name="Rabbitmq_StartSendingEmailProcess_Was_Failed" xml:space="preserve">
-    <value>Rabbitmq ile email göndermeye başlama işlemi başarısız !</value>
+    <value>Rabbitmq ile email gönderme işlemi başarısız !</value>
   </data>
   <data name="Rabbitmq_StartSendingEmailProcess_Was_Successful" xml:space="preserve">
-    <value>Rabbitmq ile email göndermeye başlama işlemi başarılı !</value>
+    <value>Rabbitmq ile email gönderme işlemi başarılı !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Added" xml:space="preserve">
     <value>Redis önbelleğine entity eklendi !</value>
@@ -390,10 +384,64 @@
   <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>IdentityId'ye göre eğitmen bulunamadı !</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
-    <value>Inveon Course App hesabı şifre değiştirme işlemi doğrulama kodu</value>
-  </data>
   <data name="Account_Email_Is_Invalid" xml:space="preserve">
     <value>Geçersiz email adresi !</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value>Merhaba</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value>Inveon Course App hesabı şifre sıfırlama işlemi doğrulama kodu</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value>Inveon Course App hesabı şifre sıfırlama işlemi doğrulama kodu</value>
+  </data>
+  <data name="Account_Please_Enter_Your_VerificationCode" xml:space="preserve">
+    <value>Lütfen doğrulama kodunuzu giriniz !</value>
+  </data>
+  <data name="Account_Please_Select_Your_VerificationType" xml:space="preserve">
+    <value>Lütfen doğrulama tipini seçiniz !</value>
+  </data>
+  <data name="Account_Please_Select_Correct_VerificationType" xml:space="preserve">
+    <value>Lütfen doğru doğrulama tipini seçiniz !</value>
+  </data>
+  <data name="Account_VerificationCode_Cannot_Be_GreaterThan_50Characters" xml:space="preserve">
+    <value>Doğrulama kodu en fazla 50 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Account_VerificationCode_Is_Invalid" xml:space="preserve">
+    <value>Geçersiz doğrulama kodu !</value>
+  </data>
+  <data name="Account_ResetPassword_Failed" xml:space="preserve">
+    <value>Şifre sıfırlama başarısız ! Lütfen daha sonra tekrar deneyiniz !</value>
+  </data>
+  <data name="Account_ResetPassword_Successful" xml:space="preserve">
+    <value>Şifre sıfırlama başarılı !</value>
+  </data>
+  <data name="Account_ActivateAccount_Failed" xml:space="preserve">
+    <value>Hesap etkinleştirme başarısız !</value>
+  </data>
+  <data name="Account_ActivateAccount_Successful" xml:space="preserve">
+    <value>Hesap etkinleştirme başarılı !</value>
+  </data>
+  <data name="Account_ConfirmEmail_Failed" xml:space="preserve">
+    <value>Email doğrulama başarısız !</value>
+  </data>
+  <data name="Account_ConfirmEmail_Successful" xml:space="preserve">
+    <value>Email doğrulama başarılı !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Email_With_Correct_Format" xml:space="preserve">
+    <value>Lütfen email adresini giriniz !</value>
+  </data>
+  <data name="Account_Please_Take_New_VerificationCode" xml:space="preserve">
+    <value>Lütfen yeni bir doğrulama kodu alınız !</value>
+  </data>
+  <data name="Account_Has_Already_Been_Activated" xml:space="preserve">
+    <value>Bu hesap zaten etkinleştirilmiş !</value>
+  </data>
+  <data name="Account_Email_Has_Already_Been_Confirmed" xml:space="preserve">
+    <value>Email adresi zaten onaylanmış !</value>
+  </data>
+  <data name="Please_Activate_Your_Account_Again" xml:space="preserve">
+    <value>Lütfen hesabınızı tekrar etkinleştirin !</value>
   </data>
 </root>

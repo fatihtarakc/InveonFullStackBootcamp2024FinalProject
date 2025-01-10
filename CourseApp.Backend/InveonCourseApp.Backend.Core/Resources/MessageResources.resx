@@ -267,9 +267,6 @@
   <data name="EmailContent_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
     <value />
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
-    <value />
-  </data>
   <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
     <value />
   </data>
@@ -298,9 +295,6 @@
     <value />
   </data>
   <data name="EmailTitle_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
-    <value />
-  </data>
-  <data name="EmailTitle_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
     <value />
   </data>
   <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
@@ -390,10 +384,64 @@
   <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value />
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
+  <data name="Account_Email_Is_Invalid" xml:space="preserve">
     <value />
   </data>
-  <data name="Account_Email_Is_Invalid" xml:space="preserve">
+  <data name="EmailTitle_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Please_Enter_Your_VerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Please_Select_Your_VerificationType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Please_Select_Correct_VerificationType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_VerificationCode_Cannot_Be_GreaterThan_50Characters" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_VerificationCode_Is_Invalid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_ResetPassword_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_ResetPassword_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_ActivateAccount_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_ActivateAccount_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_ConfirmEmail_Failed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_ConfirmEmail_Successful" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Please_Enter_Your_Email_With_Correct_Format" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Please_Take_New_VerificationCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Has_Already_Been_Activated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Account_Email_Has_Already_Been_Confirmed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Please_Activate_Your_Account_Again" xml:space="preserve">
     <value />
   </data>
 </root>

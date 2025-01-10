@@ -59,13 +59,13 @@
                     await studentRepository.AddAsync(student);
                     await unitOfWork.SaveChangesAsync();
 
-                    var emailForNewStudentDto = new EmailForNewStudentDto
+                    var emailForNewUserDto = new EmailForNewUserDto
                     {
                         To = $"{student.Name} {student.Surname}",
                         EmailTo = student.Email
                     };
 
-                    rabbitmqPublisherService.EnqueueModel<EmailForNewStudentDto>(emailForNewStudentDto, QueueName.NewStudent);
+                    rabbitmqPublisherService.EnqueueModel<EmailForNewUserDto>(emailForNewUserDto, QueueName.NewStudent);
 
                     dataResult = new SuccessDataResult<StudentDto>(student.Adapt<StudentDto>(), $"{stringLocalizer[Message.Student_Was_Added_Successfully]}\n{stringLocalizer[Message.Rabbitmq_StartSendingEmailProcess_Was_Successful]}");
                     transactionScope.Commit();

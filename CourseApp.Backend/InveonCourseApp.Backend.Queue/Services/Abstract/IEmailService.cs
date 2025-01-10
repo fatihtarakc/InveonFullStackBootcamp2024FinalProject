@@ -2,16 +2,14 @@
 {
     public interface IEmailService
     {
-        Task<IResult> SendingEmailForNewStudentAsync(EmailForNewStudentDto emailForNewStudentDto);
+        Task<IResult> SendingEmailForNewStudentAsync(EmailForNewUserDto emailForNewUserDto);
 
-        Task<IResult> SendingEmailForNewTrainerAsync(EmailForNewTrainerDto emailForNewTrainerDto);
+        Task<IResult> SendingEmailForNewTrainerAsync(EmailForNewUserDto emailForNewUserDto);
 
-        Task<IResult> SendingEmailForActivateAccountAsync(EmailForActivateAccountDto emailForActivateAccountDto);
+        Task<IResult> SendingEmailForActivateAccountAsync(EmailForVerificationDto emailForVerificationDto);
 
-        Task<IResult> SendingEmailForConfirmEmailAsync(EmailForConfirmEmailDto emailForConfirmEmailDto);
+        Task<IResult> SendingEmailForConfirmEmailAsync(EmailForVerificationDto emailForVerificationDto);
 
-        Task<IResult> SendingEmailForChangePasswordAsync(EmailForChangePasswordDto emailForChangePasswordDto);
-
-        Task<IResult> SendingEmailForTwoFactorAuthenticationAsync(EmailForTwoFactorAuthenticationDto emailForTwoFactorAuthenticationDto);
+        Task<IResult> SendingEmailForResetPasswordAsync(EmailForVerificationDto emailForVerificationDto);
     }
 }

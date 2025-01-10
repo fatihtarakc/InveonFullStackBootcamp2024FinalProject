@@ -108,7 +108,10 @@
         {
             if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
 
-            return Ok("hesabınızı active etmek için email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
+            var result = await accountService.SendVerificationCodeWithEmailAsync(email, VerificationType.ActivateAccount);
+            if (!result.IsSuccess) return BadRequest(stringLocalizer[Message.Email_SendingProcess_Was_Failed]);
+
+            return Ok($"{result.Message}");
         }
 
         [HttpPost]
@@ -116,7 +119,10 @@
         {
             if (!ModelState.IsValid) return BadRequest();
 
-            return Ok(identityUserActivateAccountDto.VerificationCode);
+            var result = await accountService.ActivateAsync(identityUserActivateAccountDto);
+            if (!result.IsSuccess) return BadRequest(result.Message);
+
+            return Ok(result.Message);
         }
 
         [HttpGet]
@@ -124,41 +130,44 @@
         {
             if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
 
-            return Ok("email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
+            var result = await accountService.SendVerificationCodeWithEmailAsync(email, VerificationType.ConfirmEmail);
+            if (!result.IsSuccess) return BadRequest(stringLocalizer[Message.Email_SendingProcess_Was_Failed]);
+
+            return Ok($"{result.Message}");
         }
 
         [HttpPost]
         public async Task<IActionResult> ConfirmEmail([FromBody] IdentityUserConfirmEmailDto identityUserEmailConfirmDto)
         {
-            return Ok(identityUserEmailConfirmDto.VerificationCode);
+            if (!ModelState.IsValid) return BadRequest();
+
+            var result = await accountService.ConfirmEmailAsync(identityUserEmailConfirmDto);
+            if (!result.IsSuccess) return BadRequest(result.Message);
+
+            return Ok(result.Message);
         }
 
         [HttpGet]
-        public async Task<IActionResult> ChangePassword(string email)
+        public async Task<IActionResult> ResetPassword(string email)
         {
             if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
 
-            return Ok("şifre değiştirme işlemi için email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
+            var result = await accountService.SendVerificationCodeWithEmailAsync(email, VerificationType.ResetPassword);
+            if (!result.IsSuccess) return BadRequest(result.Message);
+
+            return Ok(result.Message);
         }
 
         [HttpPost]
-        public IActionResult ChangePassword([FromBody] IdentityUserChangePasswordDto identityUserChangePasswordDto)
+        public async Task<IActionResult> ResetPassword([FromBody] IdentityUserResetPasswordDto identityUserForgotPasswordDto)
         {
-            return Ok("");
-        }
+            if (!ModelState.IsValid) return BadRequest();
 
-        [HttpGet]
-        public async Task<IActionResult> ForgotPassword(string email)
-        {
-            if (!(await accountService.AnyAsync(identityUser => identityUser.Email == email))) return BadRequest(stringLocalizer[Message.Account_Email_Is_Invalid]);
+            var result = await accountService.ResetPasswordAsync(identityUserForgotPasswordDto);
+            if (!result.IsSuccess) return BadRequest($"{result.Message}");
 
-            return Ok("şifre yenileme işlemi için email doğrulama kodu gönderildi - doğrulama kodu kaydedildi !");
-        }
-
-        [HttpPost]
-        public IActionResult ForgotPassword([FromBody] IdentityUserForgotPasswordDto identityUserForgotPasswordDto)
-        {
-            return Ok("");
+            await accountService.SignOutAsync();
+            return Ok($"{result.Message} : Your account was signed out !");
         }
     }
 }

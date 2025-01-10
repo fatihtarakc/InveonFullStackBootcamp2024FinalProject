@@ -267,9 +267,6 @@
   <data name="EmailContent_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
     <value>Your new trainer account was created in Inveon Course App !</value>
   </data>
-  <data name="EmailSubject_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
-    <value>Inveon Course App account password change process verification code</value>
-  </data>
   <data name="EmailContent_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
     <value>Inveon Course App account two factor authentication process verification code</value>
   </data>
@@ -298,9 +295,6 @@
     <value>Hello</value>
   </data>
   <data name="EmailTitle_Has_Been_Sent_For_NewTrainer" xml:space="preserve">
-    <value>Hello</value>
-  </data>
-  <data name="EmailTitle_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
     <value>Hello</value>
   </data>
   <data name="EmailTitle_Has_Been_Sent_For_TwoFactorAuthentication" xml:space="preserve">
@@ -390,10 +384,64 @@
   <data name="Trainer_Was_Not_Found_ByIdentityId" xml:space="preserve">
     <value>Trainer was not found by identity id !</value>
   </data>
-  <data name="EmailContent_Has_Been_Sent_For_ChangePassword" xml:space="preserve">
-    <value>Inveon Course App account password change process verification code</value>
-  </data>
   <data name="Account_Email_Is_Invalid" xml:space="preserve">
     <value>This email address is invalid !</value>
+  </data>
+  <data name="EmailTitle_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="EmailSubject_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value>Inveon Course App account password reset process verification code</value>
+  </data>
+  <data name="EmailContent_Has_Been_Sent_For_ResetPassword" xml:space="preserve">
+    <value>Inveon Course App account password reset process verification code</value>
+  </data>
+  <data name="Account_Please_Enter_Your_VerificationCode" xml:space="preserve">
+    <value>Please enter your verification code !</value>
+  </data>
+  <data name="Account_Please_Select_Your_VerificationType" xml:space="preserve">
+    <value>Please select your verification type !</value>
+  </data>
+  <data name="Account_Please_Select_Correct_VerificationType" xml:space="preserve">
+    <value>Please select correct verification type !</value>
+  </data>
+  <data name="Account_VerificationCode_Cannot_Be_GreaterThan_50Characters" xml:space="preserve">
+    <value>Verification code length cannot be greater than 20 characters !</value>
+  </data>
+  <data name="Account_VerificationCode_Is_Invalid" xml:space="preserve">
+    <value>This verification code is invalid !</value>
+  </data>
+  <data name="Account_ResetPassword_Failed" xml:space="preserve">
+    <value>Password reset failed ! Please try again later !</value>
+  </data>
+  <data name="Account_ResetPassword_Successful" xml:space="preserve">
+    <value>Password sıfırlama successful !</value>
+  </data>
+  <data name="Account_ActivateAccount_Failed" xml:space="preserve">
+    <value>Account activate failed !</value>
+  </data>
+  <data name="Account_ActivateAccount_Successful" xml:space="preserve">
+    <value>Account activate successful !</value>
+  </data>
+  <data name="Account_ConfirmEmail_Failed" xml:space="preserve">
+    <value>Email confirm failed !</value>
+  </data>
+  <data name="Account_ConfirmEmail_Successful" xml:space="preserve">
+    <value>Email confirm successful !</value>
+  </data>
+  <data name="Account_Please_Enter_Your_Email_With_Correct_Format" xml:space="preserve">
+    <value>Please enter your email address correctly !</value>
+  </data>
+  <data name="Account_Please_Take_New_VerificationCode" xml:space="preserve">
+    <value>Please take a new verification code !</value>
+  </data>
+  <data name="Account_Has_Already_Been_Activated" xml:space="preserve">
+    <value>Account has already been activated !</value>
+  </data>
+  <data name="Account_Email_Has_Already_Been_Confirmed" xml:space="preserve">
+    <value>Email address has alreay been confirmed !</value>
+  </data>
+  <data name="Please_Activate_Your_Account_Again" xml:space="preserve">
+    <value>Please activate your account again !</value>
   </data>
 </root>
