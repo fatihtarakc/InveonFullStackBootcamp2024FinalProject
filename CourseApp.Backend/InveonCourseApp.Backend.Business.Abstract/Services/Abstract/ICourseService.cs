@@ -6,8 +6,8 @@
 
         Task<IDataResult<CourseDto>> GetByIdAsync(Guid courseId);
 
-        Task<IDataResult<List<CourseDto>>> GetAllWhereAsync(Expression<Func<Course, bool>> expression);
+        Task<IDataResult<List<CourseListDto>>> GetAllWhereAsync(Expression<Func<Course, bool>> expression);
 
-        Task<IDataResult<List<CourseDto>>> GetAllAsync();
+        Task<IDataResult<List<CourseListDto>>> GetAllAsync();
     }
 }

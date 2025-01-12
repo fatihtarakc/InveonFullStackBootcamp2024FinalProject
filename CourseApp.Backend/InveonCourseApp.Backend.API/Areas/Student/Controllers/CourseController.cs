@@ -9,12 +9,17 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> AllCourses()
+        public async Task<IActionResult> Courses()
         {
             var courseDtosDataResult = await courseService.GetAllAsync();
             if (!courseDtosDataResult.IsSuccess) return BadRequest(courseDtosDataResult.Message);
 
             return Ok(courseDtosDataResult.Data);
+        }
+
+        [HttpGet("{email}")]
+        public async Task<IActionResult> CoursesGetBy(string email)
+        {
         }
     }
 }

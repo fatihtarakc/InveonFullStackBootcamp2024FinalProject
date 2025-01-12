@@ -15,5 +15,10 @@
 
         public async Task<ICollection<Course>> IncludeGetAllWhereAsync(Expression<Func<Course, bool>> expression, Expression<Func<Course, object>> include, Expression<Func<object, object>> thenInclude, Expression<Func<Course, object>> orderby, bool tracking = true) =>
             await GetAllByStatusIsNotDeletedByTracking(tracking).Include(include).ThenInclude(thenInclude).Where(expression).OrderBy(orderby).ToListAsync();
+
+        public async Task<ICollection<Course>> IncludeGetAllWhereAsync(Expression<Func<Course, object>> orderby, bool tracking = true)
+        {
+            await GetAllByStatusIsNotDeletedByTracking(tracking).Include(course => course.).Include(course => course.StudentCourses).ThenInclude(studentCourses => studentCourses.Student).OrderBy(orderby).ToListAsync();
+        }
     }
 }

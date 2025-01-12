@@ -4,6 +4,6 @@
     {
         Task<IDataResult<CategoryDto>> GetByIdAsync(Guid categoryId);
 
-        Task<IDataResult<List<CategoryDto>>> GetAllAsync();
+        Task<IDataResult<List<CategoryListDto>>> GetAllAsync();
     }
 }

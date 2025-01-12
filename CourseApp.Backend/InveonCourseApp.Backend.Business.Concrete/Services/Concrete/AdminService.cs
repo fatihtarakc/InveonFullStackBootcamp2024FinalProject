@@ -4,13 +4,11 @@
     {
         private readonly IAdminRepository adminRepository;
         private readonly IStringLocalizer<MessageResources> stringLocalizer;
-        private readonly ILogger<AdminService> logger;
 
-        public AdminService(IAdminRepository adminRepository, IStringLocalizer<MessageResources> stringLocalizer, ILogger<AdminService> logger)
+        public AdminService(IAdminRepository adminRepository, IStringLocalizer<MessageResources> stringLocalizer)
         {
             this.adminRepository = adminRepository;
             this.stringLocalizer = stringLocalizer;
-            this.logger = logger;
         }
 
         public async Task<IDataResult<AdminDto>> GetByEmailAsync(string email) =>

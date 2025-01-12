@@ -78,36 +78,40 @@
             }
         }
 
-        public async Task<IDataResult<List<CourseDto>>> GetAllWhereAsync(Expression<Func<Course, bool>> expression)
+        public async Task<IDataResult<List<CourseListDto>>> GetAllWhereAsync(Expression<Func<Course, bool>> expression)
         {
             try
             {
-                var courseDtos = (await courseRepository.GetAllWhereAsync(expression)).Adapt<List<CourseDto>>() ?? new List<CourseDto>();
-                if (courseDtos.Count() is 0) return new ErrorDataResult<List<CourseDto>>(courseDtos, stringLocalizer[Message.Course_List_Has_Been_Empty]);
+                var courseListDtos = (await courseRepository.GetAllWhereAsync(expression)).Adapt<List<CourseListDto>>() ?? new List<CourseListDto>();
+                if (courseListDtos.Count() is 0) return new ErrorDataResult<List<CourseListDto>>(courseListDtos, stringLocalizer[Message.Course_List_Has_Been_Empty]);
 
-                return new SuccessDataResult<List<CourseDto>>(courseDtos, stringLocalizer[Message.Course_WantedCourses_Were_Got_Successfully]);
+                return new SuccessDataResult<List<CourseListDto>>(courseListDtos, stringLocalizer[Message.Course_WantedCourses_Were_Got_Successfully]);
             }
             catch (Exception exception)
             {
                 logger.LogError($"{stringLocalizer[Message.Course_WantedCourses_Getting_Process_Was_Failed]}\n{exception.Message}");
-                return new ErrorDataResult<List<CourseDto>>(stringLocalizer[Message.Course_WantedCourses_Getting_Process_Was_Failed]);
+                return new ErrorDataResult<List<CourseListDto>>(stringLocalizer[Message.Course_WantedCourses_Getting_Process_Was_Failed]);
             }
         }
 
-        public async Task<IDataResult<List<CourseDto>>> GetAllAsync()
+        public async Task<IDataResult<List<CourseListDto>>> GetAllAsync()
         {
             try
             {
-                var courseDtos = (await courseRepository.GetAllAsync()).Adapt<List<CourseDto>>() ?? new List<CourseDto>();
-                if (courseDtos.Count() is 0) return new ErrorDataResult<List<CourseDto>>(courseDtos, stringLocalizer[Message.Course_List_Has_Been_Empty]);
+                var courseListDtos = (await courseRepository.GetAllAsync()).Adapt<List<CourseListDto>>() ?? new List<CourseListDto>();
+                if (courseListDtos.Count() is 0) return new ErrorDataResult<List<CourseListDto>>(courseListDtos, stringLocalizer[Message.Course_List_Has_Been_Empty]);
 
-                return new SuccessDataResult<List<CourseDto>>(courseDtos, stringLocalizer[Message.Course_AllCourses_Were_Got_Successfully]);
+                return new SuccessDataResult<List<CourseListDto>>(courseListDtos, stringLocalizer[Message.Course_AllCourses_Were_Got_Successfully]);
             }
             catch (Exception exception)
             {
                 logger.LogError($"{stringLocalizer[Message.Course_AllCourses_Getting_Process_Was_Failed]}\n{exception.Message}");
-                return new ErrorDataResult<List<CourseDto>>(stringLocalizer[Message.Course_AllCourses_Getting_Process_Was_Failed]);
+                return new ErrorDataResult<List<CourseListDto>>(stringLocalizer[Message.Course_AllCourses_Getting_Process_Was_Failed]);
             }
         }
+
+        //public async Task<IDataResult<List<CourseDto>>> IncludeStudetsGetAll()
+        //{
+        //}
     }
 }

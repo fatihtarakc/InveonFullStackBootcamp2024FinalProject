@@ -11,10 +11,10 @@
         [HttpGet]
         public async Task<IActionResult> Categories()
         {
-            var categoryDtosDataResult = await categoryService.GetAllAsync();
-            if (!categoryDtosDataResult.IsSuccess) return BadRequest(categoryDtosDataResult.Message);
+            var categoryListDtosDataResult = await categoryService.GetAllAsync();
+            if (!categoryListDtosDataResult.IsSuccess) return BadRequest(categoryListDtosDataResult.Message);
 
-            return Ok(categoryDtosDataResult.Data);
+            return Ok(categoryListDtosDataResult.Data);
         }
 
         [HttpGet("{categoryId :guid}")]

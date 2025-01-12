@@ -1,12 +1,8 @@
-﻿namespace InveonCourseApp.Backend.Dtos.OrderDtos
+﻿namespace InveonCourseApp.Backend.Dtos.StudentCourseDtos
 {
-    public class OrderDto
+    public class StudentCourseDto
     {
         public Guid Id { get; set; }
-        public int TotalCourseAmount { get; set; }
-        public decimal TotalCoursePrice { get; set; }
-        public Currency Currency { get; set; }
-        public ShoppingStatus ShoppingStatus { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public string? ModifiedBy { get; set; }
@@ -14,5 +10,6 @@
 
         // Relations
         public Guid StudentId { get; set; }
+        public Guid OrderId { get; set; }
     }
 }

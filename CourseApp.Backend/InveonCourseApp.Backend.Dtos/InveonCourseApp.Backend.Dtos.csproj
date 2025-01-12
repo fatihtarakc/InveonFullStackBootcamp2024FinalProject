@@ -10,4 +10,8 @@
     <ProjectReference Include="..\InveonCourseApp.Backend.Core\InveonCourseApp.Backend.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\fatihtarakc\Desktop\InveonFullStackBootcamp2024FinalProject\CourseApp.Backend\InveonCourseApp.Backend.Dtos\StudentDtos\.editorconfig" />
+  </ItemGroup>
+
 </Project>

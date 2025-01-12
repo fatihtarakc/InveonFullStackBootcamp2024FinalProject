@@ -34,19 +34,19 @@
             }
         }
 
-        public async Task<IDataResult<List<CategoryDto>>> GetAllAsync()
+        public async Task<IDataResult<List<CategoryListDto>>> GetAllAsync()
         {
             try
             {
-                var categoryDtos = (await categoryRepository.GetAllAsync()).Adapt<List<CategoryDto>>() ?? new List<CategoryDto>();
-                if (categoryDtos.Count() is 0) return new ErrorDataResult<List<CategoryDto>>(categoryDtos, stringLocalizer[Message.Category_List_Has_Been_Empty]);
+                var categoryListDtos = (await categoryRepository.GetAllAsync()).Adapt<List<CategoryListDto>>() ?? new List<CategoryListDto>();
+                if (categoryListDtos.Count() is 0) return new ErrorDataResult<List<CategoryListDto>>(categoryListDtos, stringLocalizer[Message.Category_List_Has_Been_Empty]);
 
-                return new SuccessDataResult<List<CategoryDto>>(categoryDtos, stringLocalizer[Message.Category_AllCategories_Were_Got_Successfully]);
+                return new SuccessDataResult<List<CategoryListDto>>(categoryListDtos, stringLocalizer[Message.Category_AllCategories_Were_Got_Successfully]);
             }
             catch (Exception exception)
             {
                 logger.LogError($"{stringLocalizer[Message.Category_AllCategories_Getting_Process_Was_Failed]}\n{exception.Message}");
-                return new ErrorDataResult<List<CategoryDto>>(stringLocalizer[Message.Category_AllCategories_Getting_Process_Was_Failed]);
+                return new ErrorDataResult<List<CategoryListDto>>(stringLocalizer[Message.Category_AllCategories_Getting_Process_Was_Failed]);
             }
         }
     }
