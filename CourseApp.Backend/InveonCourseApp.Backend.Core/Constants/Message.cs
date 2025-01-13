@@ -189,6 +189,15 @@
         #endregion
 
         #region Category
+        public const string Category_Was_Added_Successfully = "Category_Was_Added_Successfully";
+        public const string Category_Could_Not_Be_Added = "Category_Could_Not_Be_Added";
+        
+        public const string Category_Was_Deleted_Successfully = "Category_Was_Deleted_Successfully";
+        public const string Category_Could_Not_Be_Deleted = "Category_Could_Not_Be_Deleted";
+        
+        public const string Category_Was_Updated_Successfully = "Category_Was_Updated_Successfully";
+        public const string Category_Could_Not_Be_Updated = "Category_Could_Not_Be_Updated";
+        
         public const string Category_Was_Not_Found_ById = "Category_Was_Not_Found_ById";
 
         public const string Category_List_Has_Been_Empty = "Category_List_Has_Been_Empty";
@@ -197,11 +206,19 @@
 
         public const string Category_Was_Got_Successfully = "Category_Was_Got_Successfully";
         public const string Category_Could_Not_Be_Got = "Category_Could_Not_Be_Got";
+        
+        public const string Category_Name_Has_Already_Existed = "Category_Name_Has_Already_Existed";
+
+        public const string Category_Please_Enter_Name = "Category_Please_Enter_Name";
+        public const string Category_Digits_ForName_Cannot_Be_Used = "Category_Digits_ForName_Cannot_Be_Used";
+        public const string Category_Symbols_ForName_Cannot_Be_Used = "Category_Symbols_ForName_Cannot_Be_Used";
+        public const string Category_Name_Cannot_Be_LessThan_2Characters = "Category_Name_Cannot_Be_LessThan_2Characters";
+        public const string Category_Name_Cannot_Be_GreaterThan_50Characters = "Category_Name_Cannot_Be_GreaterThan_50Characters";
         #endregion
 
         #region Course
         public const string Course_Was_Added_Successfully = "Course_Was_Added_Successfully";
-        public const string Course_Could_Not_Added = "Course_Could_Not_Added";
+        public const string Course_Could_Not_Be_Added = "Course_Could_Not_Be_Added";
 
         public const string Course_List_Has_Been_Empty = "Course_List_Has_Been_Empty";
         public const string Course_AllCourses_Were_Got_Successfully = "Course_AllCourses_Were_Got_Successfully";
@@ -222,21 +239,28 @@
         public const string Course_Please_Enter_ImageUrl = "Course_Please_Enter_ImageUrl";
         public const string Course_ImageUrl_Cannot_Be_LessThan_5Characters = "Course_ImageUrl_Cannot_Be_LessThan_5Characters";
         public const string Course_ImageUrl_Cannot_Be_GreaterThan_250Characters = "Course_ImageUrl_Cannot_Be_GreaterThan_250Characters";
-        
+
         public const string Course_Please_Enter_Description = "Course_Please_Enter_Description";
         public const string Course_Digits_ForDescription_Cannot_Be_Used = "Course_Digits_ForDescription_Cannot_Be_Used";
         public const string Course_Symbols_ForDescription_Cannot_Be_Used = "Course_Symbols_ForDescription_Cannot_Be_Used";
         public const string Course_Description_Cannot_Be_LessThan_5Characters = "Course_Description_Cannot_Be_LessThan_5Characters";
         public const string Course_Description_Cannot_Be_GreaterThan_450Characters = "Course_Description_Cannot_Be_GreaterThan_450Characters";
-        
+
         public const string Course_Please_Enter_Price = "Course_Please_Enter_Price";
         public const string Course_Price_Must_Be_Min_0 = "Course_Price_Must_Be_Min_0";
-        
+
         public const string Course_Please_Enter_Currency = "Course_Please_Enter_Currency";
-        
+
         public const string Course_Please_Enter_CategoryId = "Course_Please_Enter_CategoryId";
-        
+
         public const string Course_Please_Enter_TrainerId = "Course_Please_Enter_TrainerId";
+        #endregion
+
+        #region CourseOrder
+        public const string CourseOrder_Course_Has_Already_Existed = "CourseOrder_Course_Has_Already_Existed";
+        
+        public const string CourseOrder_Was_Added_Successfully = "CourseOrder_Was_Added_Successfully";
+        public const string CourseOrder_Could_Not_Be_Added = "CourseOrder_Could_Not_Be_Added";
         #endregion
 
         #region Order
@@ -249,7 +273,7 @@
         public const string Payment_List_Has_Been_Empty = "Payment_List_Has_Been_Empty";
         public const string Payment_WantedPayments_Were_Got_Successfully = "Payment_WantedPayments_Were_Got_Successfully";
         public const string Payment_WantedPayments_Getting_Process_Was_Failed = "Payment_WantedPayments_Getting_Process_Was_Failed";
-        
+
         public const string Payment_Could_Not_Be_Got = "Payment_Could_Not_Be_Got";
         public const string Payment_Was_Got_Successfully = "Payment_Was_Got_Successfully";
         #endregion

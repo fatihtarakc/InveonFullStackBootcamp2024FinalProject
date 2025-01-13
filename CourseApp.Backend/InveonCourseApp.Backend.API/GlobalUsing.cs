@@ -26,6 +26,7 @@ global using InveonCourseApp.Backend.DataAccess.Extensions;
 global using InveonCourseApp.Backend.DataAccess.Concrete.Extensions;
 global using InveonCourseApp.Backend.Dtos.AdminDtos;
 global using InveonCourseApp.Backend.Dtos.AuditablePersonBaseEntityDtos;
+global using InveonCourseApp.Backend.Dtos.CategoryDtos;
 global using InveonCourseApp.Backend.Dtos.CourseDtos;
 global using InveonCourseApp.Backend.Dtos.IdentityUserDtos;
 global using InveonCourseApp.Backend.Dtos.StudentDtos;

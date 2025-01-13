@@ -45,8 +45,8 @@
                 }
                 catch (Exception exception)
                 {
-                    logger.LogError($"{stringLocalizer[Message.Course_Could_Not_Added]} : {exception.Message}");
-                    dataResult = new ErrorDataResult<CourseDto>(stringLocalizer[Message.Course_Could_Not_Added]);
+                    logger.LogError($"{stringLocalizer[Message.Course_Could_Not_Be_Added]} : {exception.Message}");
+                    dataResult = new ErrorDataResult<CourseDto>(stringLocalizer[Message.Course_Could_Not_Be_Added]);
                     transactionScope.Rollback();
                 }
                 finally

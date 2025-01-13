@@ -7,6 +7,7 @@ global using InveonCourseApp.Backend.Dtos.AdminDtos;
 global using InveonCourseApp.Backend.Dtos.AuditablePersonBaseEntityDtos;
 global using InveonCourseApp.Backend.Dtos.CategoryDtos;
 global using InveonCourseApp.Backend.Dtos.CourseDtos;
+global using InveonCourseApp.Backend.Dtos.CourseOrderDtos;
 global using InveonCourseApp.Backend.Dtos.IdentityUserDtos;
 global using InveonCourseApp.Backend.Dtos.OrderDtos;
 global using InveonCourseApp.Backend.Dtos.PaymentDtos;

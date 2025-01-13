@@ -2,5 +2,6 @@
 {
     public interface ICourseOrderService
     {
+        Task<IDataResult<CourseOrderDto>> AddAsync(CourseOrderAddDto courseOrderAddDto);
     }
 }

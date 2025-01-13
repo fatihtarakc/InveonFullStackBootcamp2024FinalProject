@@ -532,7 +532,7 @@
     <value>Kurs adı en az 2 karakterden oluşmalıdır !</value>
   </data>
   <data name="Course_Name_Cannot_Be_GreaterThan_100Characters" xml:space="preserve">
-    <value>Kurs adı en fazla 25 karakterden oluşmalıdır !</value>
+    <value>Kurs adı en fazla 100 karakterden oluşmalıdır !</value>
   </data>
   <data name="Course_Please_Enter_ImageUrl" xml:space="preserve">
     <value>Lütfen resim url'sini adını giriniz !</value>
@@ -576,9 +576,6 @@
   <data name="Category_Was_Not_Found_ById" xml:space="preserve">
     <value>Id'ye göre kategori bulunamadı !</value>
   </data>
-  <data name="Course_Could_Not_Added" xml:space="preserve">
-    <value>Kurs eklenemedi !</value>
-  </data>
   <data name="Order_List_Has_Been_Empty" xml:space="preserve">
     <value>Sipariş listesi boş !</value>
   </data>
@@ -602,5 +599,56 @@
   </data>
   <data name="Payment_Was_Got_Successfully" xml:space="preserve">
     <value>Ödeme başarılı bir şekilde getirildi !</value>
+  </data>
+  <data name="Category_Please_Enter_Name" xml:space="preserve">
+    <value>Lütfen kategori adını giriniz !</value>
+  </data>
+  <data name="Category_Digits_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Kategori adı için rakam kullanılamaz !</value>
+  </data>
+  <data name="Category_Symbols_ForName_Cannot_Be_Used" xml:space="preserve">
+    <value>Kategori adı için sembol kullanılamaz !</value>
+  </data>
+  <data name="Category_Name_Cannot_Be_LessThan_2Characters" xml:space="preserve">
+    <value>Kategori adı en az 2 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Category_Name_Cannot_Be_GreaterThan_50Characters" xml:space="preserve">
+    <value>Kategori adı en fazla 50 karakterden oluşmalıdır !</value>
+  </data>
+  <data name="Category_Name_Has_Already_Existed" xml:space="preserve">
+    <value>Bu kategori adı kullanılamaz !</value>
+  </data>
+  <data name="Category_Was_Added_Successfully" xml:space="preserve">
+    <value>Kategori başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="Category_Could_Not_Be_Added" xml:space="preserve">
+    <value>Kategori eklenemedi !</value>
+  </data>
+  <data name="Course_Could_Not_Be_Added" xml:space="preserve">
+    <value>Kurs eklenemedi !</value>
+  </data>
+  <data name="Course_Was_Added_Successfully" xml:space="preserve">
+    <value>Kurs başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="Category_Was_Updated_Successfully" xml:space="preserve">
+    <value>Kategori başarılı bir şekilde güncellendi !</value>
+  </data>
+  <data name="Category_Could_Not_Be_Updated" xml:space="preserve">
+    <value>Kategori güncellenemedi !</value>
+  </data>
+  <data name="Category_Was_Deleted_Successfully" xml:space="preserve">
+    <value>Kategori başarılı bir şekilde silindi !</value>
+  </data>
+  <data name="Category_Could_Not_Be_Deleted" xml:space="preserve">
+    <value>Kategori silinemedi !</value>
+  </data>
+  <data name="CourseOrder_Course_Has_Already_Existed" xml:space="preserve">
+    <value>Bu sipariş içinde kurs zaten var !</value>
+  </data>
+  <data name="CourseOrder_Was_Added_Successfully" xml:space="preserve">
+    <value>Kurs siparişe başarılı bir şekilde eklendi !</value>
+  </data>
+  <data name="CourseOrder_Could_Not_Be_Added" xml:space="preserve">
+    <value>Kurs siparişe eklenemedi</value>
   </data>
 </root>
