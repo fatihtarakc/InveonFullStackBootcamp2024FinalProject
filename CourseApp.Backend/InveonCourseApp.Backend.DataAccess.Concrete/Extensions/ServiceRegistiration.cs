@@ -8,7 +8,7 @@
 
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<ICourseOrderRepository, CourseOrderRepository>();
+            services.AddScoped<IOrderCourseRepository, OrderCourseRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();

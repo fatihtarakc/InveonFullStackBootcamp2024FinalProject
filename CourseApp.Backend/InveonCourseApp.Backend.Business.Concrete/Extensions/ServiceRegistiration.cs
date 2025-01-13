@@ -7,7 +7,7 @@
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<ICourseOrderService, CourseOrderService>();
+            services.AddScoped<IOrderCourseService, OrderCourseService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPaymentService, PaymentService>();

@@ -172,10 +172,14 @@
         #endregion
 
         #region Redis
-        public const string Redis_Cache_Entity_Was_Added = "Redis_Cache_Entity_Was_Added";
         public const string Redis_Cache_Entity_Was_Found = "Redis_Cache_Entity_Was_Found";
-        public const string Redis_Cache_Entity_Was_Not_Added = "Redis_Cache_Entity_Was_Not_Added";
         public const string Redis_Cache_Entity_Was_Not_Found = "Redis_Cache_Entity_Was_Not_Found";
+
+        public const string Redis_Cache_Entity_Was_Added = "Redis_Cache_Entity_Was_Added";
+        public const string Redis_Cache_Entity_Could_Not_Be_Added = "Redis_Cache_Entity_Could_Not_Be_Added";
+
+        public const string Redis_Cache_Entity_Was_Deleted = "Redis_Cache_Entity_Was_Deleted";
+        public const string Redis_Cache_Entity_Could_Not_Be_Deleted = "Redis_Cache_Entity_Could_Not_Be_Deleted";
         #endregion
 
         #region Rabbitmq
@@ -256,11 +260,11 @@
         public const string Course_Please_Enter_TrainerId = "Course_Please_Enter_TrainerId";
         #endregion
 
-        #region CourseOrder
-        public const string CourseOrder_Course_Has_Already_Existed = "CourseOrder_Course_Has_Already_Existed";
+        #region OrderCourse
+        public const string OrderCourse_Course_Has_Already_Existed = "OrderCourse_Course_Has_Already_Existed";
         
-        public const string CourseOrder_Was_Added_Successfully = "CourseOrder_Was_Added_Successfully";
-        public const string CourseOrder_Could_Not_Be_Added = "CourseOrder_Could_Not_Be_Added";
+        public const string OrderCourse_Was_Added_Successfully = "OrderCourse_Was_Added_Successfully";
+        public const string OrderCourse_Could_Not_Be_Added = "OrderCourse_Could_Not_Be_Added";
         #endregion
 
         #region Order

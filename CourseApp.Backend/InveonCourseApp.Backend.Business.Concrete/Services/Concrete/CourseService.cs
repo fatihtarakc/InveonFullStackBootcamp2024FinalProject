@@ -62,13 +62,13 @@
         {
             try
             {
-                var result = await cacheService.GetCacheAsync($"Course_{courseId}");
+                var result = await cacheService.GetByAsync($"Course_{courseId}");
                 if (result.Data is not null) return new SuccessDataResult<CourseDto>(result.Data.Adapt<CourseDto>(), stringLocalizer[Message.Course_Was_Got_Successfully]);
 
                 var course = await courseRepository.GetByIdAsync(courseId);
                 if (course is null) return new ErrorDataResult<CourseDto>(stringLocalizer[Message.Course_Could_Not_Be_Got]);
 
-                await cacheService.SetCacheAsync($"Course_{courseId}", course, TimeSpan.FromDays(1));
+                await cacheService.AddAsync($"Course_{courseId}", course, TimeSpan.FromDays(1));
                 return new SuccessDataResult<CourseDto>(course.Adapt<CourseDto>(), stringLocalizer[Message.Course_Was_Got_Successfully]);
             }
             catch (Exception exception)

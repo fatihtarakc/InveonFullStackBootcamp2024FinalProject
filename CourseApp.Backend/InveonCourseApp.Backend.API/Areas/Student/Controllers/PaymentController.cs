@@ -1,6 +1,4 @@
-﻿using InveonCourseApp.Backend.Business.Concrete.Services.Concrete;
-
-namespace InveonCourseApp.Backend.API.Areas.Student.Controllers
+﻿namespace InveonCourseApp.Backend.API.Areas.Student.Controllers
 {
     public class PaymentController : StudentControllerBase
     {
@@ -10,7 +8,7 @@ namespace InveonCourseApp.Backend.API.Areas.Student.Controllers
             this.paymentService = paymentService;
         }
 
-        [HttpGet("{studentId : guid}")]
+        [HttpGet("{studentId}")]
         public async Task<IActionResult> Payments(Guid studentId)
         {
             var paymentDtosDataResult = await paymentService.GetAllWhereAsync(payment => payment.StudentId == studentId);
@@ -19,7 +17,7 @@ namespace InveonCourseApp.Backend.API.Areas.Student.Controllers
             return Ok(paymentDtosDataResult.Data);
         }
 
-        [HttpGet("{studentId :guid}")]
+        [HttpGet("{studentId}")]
         public async Task<IActionResult> GetBy(Guid studentId)
         {
             var paymentDtoDataResult = await paymentService.GetFirstOrDefaultAsync(payment => payment.StudentId == studentId);

@@ -330,7 +330,7 @@
   <data name="Redis_Cache_Entity_Was_Found" xml:space="preserve">
     <value>Redis önbelleğinde entity bulundu !</value>
   </data>
-  <data name="Redis_Cache_Entity_Was_Not_Added" xml:space="preserve">
+  <data name="Redis_Cache_Entity_Could_Not_Be_Added" xml:space="preserve">
     <value>Redis önbelleğine entity eklenemedi !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
@@ -642,13 +642,19 @@
   <data name="Category_Could_Not_Be_Deleted" xml:space="preserve">
     <value>Kategori silinemedi !</value>
   </data>
-  <data name="CourseOrder_Course_Has_Already_Existed" xml:space="preserve">
+  <data name="OrderCourse_Course_Has_Already_Existed" xml:space="preserve">
     <value>Bu sipariş içinde kurs zaten var !</value>
   </data>
-  <data name="CourseOrder_Was_Added_Successfully" xml:space="preserve">
+  <data name="OrderCourse_Was_Added_Successfully" xml:space="preserve">
     <value>Kurs siparişe başarılı bir şekilde eklendi !</value>
   </data>
-  <data name="CourseOrder_Could_Not_Be_Added" xml:space="preserve">
+  <data name="OrderCourse_Could_Not_Be_Added" xml:space="preserve">
     <value>Kurs siparişe eklenemedi</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Deleted" xml:space="preserve">
+    <value>Redis önbelleğine entity eklendi !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Could_Not_Be_Deleted" xml:space="preserve">
+    <value>Redis önbelleğinden entity silinemedi !</value>
   </data>
 </root>

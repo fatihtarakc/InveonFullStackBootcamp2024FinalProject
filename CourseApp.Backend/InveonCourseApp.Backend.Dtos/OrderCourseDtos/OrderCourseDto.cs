@@ -1,6 +1,6 @@
-﻿namespace InveonCourseApp.Backend.Dtos.CourseOrderDtos
+﻿namespace InveonCourseApp.Backend.Dtos.OrderCourseDtos
 {
-    public class CourseOrderDto
+    public class OrderCourseDto
     {
         public Guid Id { get; set; }
         public string CreatedBy { get; set; }
@@ -9,7 +9,7 @@
         public DateTime? ModifiedDate { get; set; }
 
         // Relations
-        public Guid CourseId { get; set; }
         public Guid OrderId { get; set; }
+        public Guid CourseId { get; set; }
     }
 }

@@ -2,8 +2,10 @@
 {
     public interface ICacheService<Entity> where Entity : AuditableBaseEntity
     {
-        Task<IDataResult<Entity>> GetCacheAsync(string cacheKey);
+        Task<IResult> AddAsync(string cacheKey, Entity entity, TimeSpan expiration);
 
-        Task<IResult> SetCacheAsync(string cacheKey, Entity entity, TimeSpan expiration);
+        Task<IResult> DeleteAsync(string cacheKey);
+
+        Task<IDataResult<Entity>> GetByAsync(string cacheKey);
     }
 }

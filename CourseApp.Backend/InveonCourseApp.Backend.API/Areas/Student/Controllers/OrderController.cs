@@ -8,7 +8,7 @@
             this.orderService = orderService;
         }
 
-        [HttpGet("{studentId : guid}")]
+        [HttpGet("{studentId}")]
         public async Task<IActionResult> CompletedOrders(Guid studentId)
         {
             var orderDtosDataResult = await orderService.GetAllWhereAsync(order => order.StudentId == studentId);

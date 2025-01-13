@@ -8,7 +8,7 @@
             this.courseService = courseService;
         }
 
-        [HttpGet("{trainerId : guid}")]
+        [HttpGet("{trainerId}")]
         public async Task<IActionResult> PublishedCourses(Guid trainerId)
         {
             var courseDtosDataResult = await courseService.GetAllWhereAsync(course => course.TrainerId == trainerId);
@@ -17,7 +17,7 @@
             return Ok(courseDtosDataResult.Data);
         }
 
-        [HttpGet("{courseId :guid}")]
+        [HttpGet("{courseId}")]
         public async Task<IActionResult> GetBy(Guid courseId)
         {
             var courseDtoDataResult = await courseService.GetByIdAsync(courseId);

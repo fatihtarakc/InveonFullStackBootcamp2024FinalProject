@@ -4,7 +4,7 @@
     {
         public Course()
         {
-            CourseOrders = new HashSet<CourseOrder>();
+            OrderCourses = new HashSet<OrderCourse>();
             StudentCourses = new HashSet<StudentCourse>();
         }
 
@@ -17,7 +17,7 @@
         // Relations
         public Guid CategoryId { get; set; }
         public Guid TrainerId { get; set; }
-        public virtual ICollection<CourseOrder> CourseOrders { get; set; }
+        public virtual ICollection<OrderCourse> OrderCourses { get; set; }
         public virtual ICollection<StudentCourse> StudentCourses { get; set; }
     }
 }

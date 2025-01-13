@@ -354,12 +354,12 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CourseOrders",
+                name: "OrderCourses",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntityStatus = table.Column<int>(type: "int", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -370,16 +370,16 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CourseOrders", x => x.Id);
-                    table.CheckConstraint("CourseOrder_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
+                    table.PrimaryKey("PK_OrderCourses", x => x.Id);
+                    table.CheckConstraint("OrderCourse_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
                     table.ForeignKey(
-                        name: "FK_CourseOrders_Courses_CourseId",
+                        name: "FK_OrderCourses_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CourseOrders_Orders_OrderId",
+                        name: "FK_OrderCourses_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
@@ -494,13 +494,13 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourseOrders_CourseId",
-                table: "CourseOrders",
+                name: "IX_OrderCourses_CourseId",
+                table: "OrderCourses",
                 column: "CourseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourseOrders_OrderId",
-                table: "CourseOrders",
+                name: "IX_OrderCourses_OrderId",
+                table: "OrderCourses",
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
@@ -569,7 +569,7 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "CourseOrders");
+                name: "OrderCourses");
 
             migrationBuilder.DropTable(
                 name: "Payments");

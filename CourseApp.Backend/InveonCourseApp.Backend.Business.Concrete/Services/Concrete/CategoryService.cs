@@ -16,23 +16,24 @@
             this.logger = logger;
         }
 
-        public async Task<IDataResult<CategoryDto>> AddAsync(CategoryAddDto categoryAddDto)
+        public async Task<IResult> AddAsync(CategoryAddDto categoryAddDto)
         {
             try
             {
                 if (await categoryRepository.AnyAsync(category => category.Name == categoryAddDto.Name))
-                    return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Name_Has_Already_Existed]);
+                    return new ErrorResult(stringLocalizer[Message.Category_Name_Has_Already_Existed]);
 
                 var category = categoryAddDto.Adapt<Category>();
                 await categoryRepository.AddAsync(category);
                 await unitOfWork.SaveChangesAsync();
 
-                return new SuccessDataResult<CategoryDto>(category.Adapt<CategoryDto>(), $"{stringLocalizer[Message.Category_Was_Added_Successfully]}");
+                await cacheService.AddAsync($"CategoryDto_{category.Id}", category, TimeSpan.FromDays(1));
+                return new SuccessResult(stringLocalizer[Message.Category_Was_Added_Successfully]);
             }
             catch (Exception exception)
             {
                 logger.LogError($"{stringLocalizer[Message.Category_Could_Not_Be_Added]} : {exception.Message}");
-                return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Could_Not_Be_Added]);
+                return new ErrorResult(stringLocalizer[Message.Category_Could_Not_Be_Added]);
             }
         }
 
@@ -46,6 +47,7 @@
                 await categoryRepository.DeleteAsync(category);
                 await unitOfWork.SaveChangesAsync();
 
+                await cacheService.DeleteAsync($"CategoryDto_{category.Id}");
                 return new SuccessResult(stringLocalizer[Message.Category_Was_Deleted_Successfully]);
             }
             catch (Exception exception)
@@ -55,26 +57,28 @@
             }
         }
 
-        public async Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto categoryUpdateDto)
+        public async Task<IResult> UpdateAsync(CategoryUpdateDto categoryUpdateDto)
         {
             try
             {
                 if (await categoryRepository.AnyAsync(category => category.Name == categoryUpdateDto.Name))
-                    return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Name_Has_Already_Existed]);
+                    return new ErrorResult(stringLocalizer[Message.Category_Name_Has_Already_Existed]);
 
                 var category = await categoryRepository.GetByIdAsync(categoryUpdateDto.Id);
-                if (category is null) return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Was_Not_Found_ById]);
+                if (category is null) return new ErrorResult(stringLocalizer[Message.Category_Was_Not_Found_ById]);
 
                 category.Name = categoryUpdateDto.Name;
                 await categoryRepository.UpdateAsync(category);
                 await unitOfWork.SaveChangesAsync();
 
-                return new SuccessDataResult<CategoryDto>(category.Adapt<CategoryDto>(), $"{stringLocalizer[Message.Category_Was_Updated_Successfully]}");
+                await cacheService.DeleteAsync($"CategoryDto_{category.Id}");
+                await cacheService.AddAsync($"CategoryDto_{category.Id}", category, TimeSpan.FromDays(1));
+                return new SuccessResult(stringLocalizer[Message.Category_Was_Updated_Successfully]);
             }
             catch (Exception exception)
             {
                 logger.LogError($"{stringLocalizer[Message.Category_Could_Not_Be_Updated]} : {exception.Message}");
-                return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Could_Not_Be_Updated]);
+                return new ErrorResult(stringLocalizer[Message.Category_Could_Not_Be_Updated]);
             }
         }
 
@@ -82,13 +86,13 @@
         {
             try
             {
-                var result = await cacheService.GetCacheAsync($"Category_{categoryId}");
-                if (result.Data is not null) return new SuccessDataResult<CategoryDto>(result.Data.Adapt<CategoryDto>(), stringLocalizer[Message.Category_Was_Got_Successfully]);
+                var dto = await cacheService.GetByAsync($"CategoryDto_{categoryId}");
+                if (dto.Data is not null) return new SuccessDataResult<CategoryDto>(dto.Data.Adapt<CategoryDto>(), stringLocalizer[Message.Category_Was_Got_Successfully]);
 
                 var category = await categoryRepository.GetByIdAsync(categoryId);
                 if (category is null) return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Could_Not_Be_Got]);
 
-                await cacheService.SetCacheAsync($"Category_{categoryId}", category, TimeSpan.FromDays(1));
+                await cacheService.AddAsync($"CategoryDto_{categoryId}", category, TimeSpan.FromDays(1));
                 return new SuccessDataResult<CategoryDto>(category.Adapt<CategoryDto>(), stringLocalizer[Message.Category_Was_Got_Successfully]);
             }
             catch (Exception exception)
@@ -102,13 +106,13 @@
         {
             try
             {
-                var result = await cacheService.GetCacheAsync($"Category_{categoryName}");
-                if (result.Data is not null) return new SuccessDataResult<CategoryDto>(result.Data.Adapt<CategoryDto>(), stringLocalizer[Message.Category_Was_Got_Successfully]);
+                var dto = await cacheService.GetByAsync($"CategoryDto_{categoryName}");
+                if (dto.Data is not null) return new SuccessDataResult<CategoryDto>(dto.Data.Adapt<CategoryDto>(), stringLocalizer[Message.Category_Was_Got_Successfully]);
 
                 var category = await categoryRepository.GetFirstOrDefaultAsync(category => category.Name == categoryName);
                 if (category is null) return new ErrorDataResult<CategoryDto>(stringLocalizer[Message.Category_Could_Not_Be_Got]);
 
-                await cacheService.SetCacheAsync($"Category_{categoryName}", category, TimeSpan.FromDays(1));
+                await cacheService.AddAsync($"CategoryDto_{categoryName}", category, TimeSpan.FromDays(1));
                 return new SuccessDataResult<CategoryDto>(category.Adapt<CategoryDto>(), stringLocalizer[Message.Category_Was_Got_Successfully]);
             }
             catch (Exception exception)

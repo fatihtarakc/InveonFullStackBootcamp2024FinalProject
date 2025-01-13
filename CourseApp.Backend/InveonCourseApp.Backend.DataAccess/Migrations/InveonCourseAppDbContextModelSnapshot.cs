@@ -220,55 +220,6 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.CourseOrder", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CourseId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("EntityStatus")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("CourseOrders", t =>
-                        {
-                            t.HasCheckConstraint("CourseOrder_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
-                        });
-                });
-
             modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.Order", b =>
                 {
                     b.Property<Guid>("Id")
@@ -324,6 +275,55 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                             t.HasCheckConstraint("Order_TotalCourseAmount_Min_Control", "TotalCourseAmount > 0");
 
                             t.HasCheckConstraint("Order_TotalCoursePrice_Min_Control", "TotalCoursePrice >= 0");
+                        });
+                });
+
+            modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.OrderCourse", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EntityStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderCourses", t =>
+                        {
+                            t.HasCheckConstraint("OrderCourse_CreatedBy_MinLength_Control", "Len(CreatedBy) >= 1");
                         });
                 });
 
@@ -824,16 +824,16 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.CourseOrder", b =>
+            modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.OrderCourse", b =>
                 {
                     b.HasOne("InveonCourseApp.Backend.Entities.Concrete.Course", "Course")
-                        .WithMany("CourseOrders")
+                        .WithMany("OrderCourses")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("InveonCourseApp.Backend.Entities.Concrete.Order", "Order")
-                        .WithMany("CourseOrders")
+                        .WithMany("OrderCourses")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -915,14 +915,14 @@ namespace InveonCourseApp.Backend.DataAccess.Migrations
 
             modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.Course", b =>
                 {
-                    b.Navigation("CourseOrders");
+                    b.Navigation("OrderCourses");
 
                     b.Navigation("StudentCourses");
                 });
 
             modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.Order", b =>
                 {
-                    b.Navigation("CourseOrders");
+                    b.Navigation("OrderCourses");
                 });
 
             modelBuilder.Entity("InveonCourseApp.Backend.Entities.Concrete.Student", b =>

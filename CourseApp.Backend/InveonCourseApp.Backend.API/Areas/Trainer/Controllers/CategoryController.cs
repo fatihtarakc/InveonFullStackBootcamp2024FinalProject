@@ -17,7 +17,7 @@
             return Ok(categoryListDtosDataResult.Data);
         }
 
-        [HttpGet("{categoryId :guid}")]
+        [HttpGet("{categoryId}")]
         public async Task<IActionResult> GetBy(Guid categoryId)
         {
             var categoryDtoDataResult = await categoryService.GetByIdAsync(categoryId);

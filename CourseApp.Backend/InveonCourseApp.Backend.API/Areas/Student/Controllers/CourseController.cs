@@ -20,6 +20,7 @@
         [HttpGet("{email}")]
         public async Task<IActionResult> CoursesGetBy(string email)
         {
+            return Ok();
         }
     }
 }

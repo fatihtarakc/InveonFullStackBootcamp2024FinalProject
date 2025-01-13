@@ -8,7 +8,7 @@
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<CourseOrder> CourseOrders { get; set; }
+        public virtual DbSet<OrderCourse> OrderCourses { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Student> Students { get; set; }
@@ -92,10 +92,10 @@
                     course.Name = course.Name.ToUpperInvariant();
                     course.CreatedBy = course.TrainerId.ToString();
                 }
-                else if (auditableBaseEntity is CourseOrder)
+                else if (auditableBaseEntity is OrderCourse)
                 {
-                    var courseOrder = (CourseOrder)auditableBaseEntity;
-                    courseOrder.CreatedBy = "super admin";
+                    var orderCourse = (OrderCourse)auditableBaseEntity;
+                    orderCourse.CreatedBy = "super admin";
                 }
                 else if (auditableBaseEntity is Order)
                 {
@@ -144,10 +144,10 @@
                     course.Name = course.Name.ToUpperInvariant();
                     course.ModifiedBy = course.TrainerId.ToString();
                 }
-                else if (auditableBaseEntity is CourseOrder)
+                else if (auditableBaseEntity is OrderCourse)
                 {
-                    var courseOrder = (CourseOrder)auditableBaseEntity;
-                    courseOrder.ModifiedBy = "super admin";
+                    var orderCourse = (OrderCourse)auditableBaseEntity;
+                    orderCourse.ModifiedBy = "super admin";
                 }
                 else if (auditableBaseEntity is Order)
                 {
@@ -191,10 +191,10 @@
                     var course = (Course)auditableBaseEntity;
                     course.DeletedBy = course.TrainerId.ToString();
                 }
-                else if (auditableBaseEntity is CourseOrder)
+                else if (auditableBaseEntity is OrderCourse)
                 {
-                    var courseOrder = (CourseOrder)auditableBaseEntity;
-                    courseOrder.DeletedBy = "super admin";
+                    var orderCourse = (OrderCourse)auditableBaseEntity;
+                    orderCourse.DeletedBy = "super admin";
                 }
                 else if (auditableBaseEntity is Order)
                 {

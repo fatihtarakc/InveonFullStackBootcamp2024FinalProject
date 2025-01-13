@@ -330,8 +330,8 @@
   <data name="Redis_Cache_Entity_Was_Found" xml:space="preserve">
     <value>Entity was found in Redis cache !</value>
   </data>
-  <data name="Redis_Cache_Entity_Was_Not_Added" xml:space="preserve">
-    <value>Entity was not added to Redis cache !</value>
+  <data name="Redis_Cache_Entity_Could_Not_Be_Added" xml:space="preserve">
+    <value>Entity could not be added to Redis cache !</value>
   </data>
   <data name="Redis_Cache_Entity_Was_Not_Found" xml:space="preserve">
     <value>Entity was not found in Redis cache !</value>
@@ -642,13 +642,19 @@
   <data name="Category_Could_Not_Be_Deleted" xml:space="preserve">
     <value>Category could not be deleted !</value>
   </data>
-  <data name="CourseOrder_Course_Has_Already_Existed" xml:space="preserve">
+  <data name="OrderCourse_Course_Has_Already_Existed" xml:space="preserve">
     <value>Course has already existed in this order !</value>
   </data>
-  <data name="CourseOrder_Was_Added_Successfully" xml:space="preserve">
+  <data name="OrderCourse_Was_Added_Successfully" xml:space="preserve">
     <value>Course was added to order successfully !</value>
   </data>
-  <data name="CourseOrder_Could_Not_Be_Added" xml:space="preserve">
+  <data name="OrderCourse_Could_Not_Be_Added" xml:space="preserve">
     <value>Course could not be added !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Was_Deleted" xml:space="preserve">
+    <value>Entity was deleted to Redis cache !</value>
+  </data>
+  <data name="Redis_Cache_Entity_Could_Not_Be_Deleted" xml:space="preserve">
+    <value>Entity could not be deleted to Redis cache !</value>
   </data>
 </root>

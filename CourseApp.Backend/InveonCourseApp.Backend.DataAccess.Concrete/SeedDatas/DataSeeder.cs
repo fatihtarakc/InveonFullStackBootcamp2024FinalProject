@@ -166,7 +166,7 @@
                 await AddOrderAsync(db, order);
             }
 
-            var courseOrders = new List<CourseOrder>()
+            var orderCourses = new List<OrderCourse>()
             {
                 new() { Id = Guid.Parse("fe810c83-27c8-42a5-ac90-c748a8228c27"), CourseId = Guid.Parse("5dc951df-3dab-4672-8115-def665f84737"), OrderId = Guid.Parse("25cb7632-f2df-44e9-8a51-e7700ab56d94")},
                 new() { Id = Guid.Parse("0353f252-0a72-49c7-b098-c98713b9629e"), CourseId = Guid.Parse("ca4608d0-6620-469d-901d-2a7b5ed691e6"), OrderId = Guid.Parse("25cb7632-f2df-44e9-8a51-e7700ab56d94")},
@@ -185,11 +185,11 @@
                 new() { Id = Guid.Parse("b6c6470e-8975-4192-857f-4cbf7c30c301"), CourseId = Guid.Parse("ca4608d0-6620-469d-901d-2a7b5ed691e6"), OrderId = Guid.Parse("a20f8847-5418-48bb-be39-f9a47a88772f")},
                 new() { Id = Guid.Parse("65461904-d9bf-4721-be7f-24b00d478ab6"), CourseId = Guid.Parse("3301584a-fa6b-4d93-92a2-70c0a770a8b1"), OrderId = Guid.Parse("a20f8847-5418-48bb-be39-f9a47a88772f")}
             };
-            foreach (var courseOrder in courseOrders)
+            foreach (var orderCourse in orderCourses)
             {
-                if (await db.CourseOrders.AnyAsync(dbCourseOrders => dbCourseOrders.Id == courseOrder.Id)) continue;
+                if (await db.OrderCourses.AnyAsync(dbCourseOrders => dbCourseOrders.Id == orderCourse.Id)) continue;
 
-                await AddCourseOrderAsync(db, courseOrder);
+                await AddOrderCourseAsync(db, orderCourse);
             }
 
             var payments = new List<Payment>()
@@ -320,9 +320,9 @@
             await db.SaveChangesAsync();
         }
 
-        private static async Task AddCourseOrderAsync(InveonCourseAppDbContext db, CourseOrder courseOrder)
+        private static async Task AddOrderCourseAsync(InveonCourseAppDbContext db, OrderCourse orderCourse)
         {
-            await db.CourseOrders.AddAsync(courseOrder);
+            await db.OrderCourses.AddAsync(orderCourse);
             await db.SaveChangesAsync();
         }
 

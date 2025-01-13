@@ -11,7 +11,7 @@
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = configuration.GetConnectionString(connectionOptions.Redis);
-                options.InstanceName = "RedisInstance";
+                options.InstanceName = "InveonCourseApp Redis";
             });
 
             return services;
